@@ -59,25 +59,56 @@
       </figure>
       <h4>Getting to know your Relatives</h4>
       <p>
-        Changing that property to “relative” means you can manipulate that
-        elements placement relative to its original position. E.g. if you set
-        the “left” property to 30px it will move 30px away from the left side of
-        its original position. It’s important to note that with relative
-        positioning, the element will stay inside the normal document flow i.e.
-        it will not affect the positioning of other nearby elements. “the
-        element remains in the normal flow of the document and the offset is
-        applied relative to its original position”
+        Setting the position property to “relative” means you can manipulate
+        that element's placement <span>relative</span> to its original position.
+        E.g. if you set the “left” property to 30px it will move 30px away from
+        the left side of its original position. <br />It’s important to note
+        that with relative positioning, the element will stay inside the normal
+        document flow, i.e. it will not affect the positioning of other nearby
+        elements. <br />
+        Notice in the example below that our new box has been moved away from
+        it's original positions on the top and left sides but it still remains
+        in the document flow underneat our original box.
       </p>
+      <figure>
+        <img
+          src="../images/relative.png"
+          alt="Example image of CSS static positioning"
+        />
+        <figcaption>
+          Relative elements can me positioned relative to their original
+          position.
+        </figcaption>
+      </figure>
       <h4>Absolutely Amazing</h4>
       <p>
-        Absolute: Changing the property to absolute will remove the element from
-        the normal document flow and will allow you to change its position. This
-        time the changes will not be relative to its original position (as it
-        doesn’t have one!) but instead they will be relative to it’s closest
-        parent element - not just it’s closest parent though, it will look for
-        the closest ancestor with a property value other than static. This means
-        it can work its way all the way up to the html or viewport elements.
+        Changing the position property to absolute will remove the element from
+        the normal document flow and allow you to change its position.
+        <br />This time the changes will not be relative to its original
+        position (as it doesn’t have one!) but instead they will be relative to
+        it’s closest parent element - not just it’s closest parent though,
+        <span
+          >it will look for the closest ancestor with a property value other
+          than static</span
+        >. <br />This is important to remember as it means it can work its way
+        all the way up to the html or viewport elements if none of its other
+        parents have their position property set to something other than static.
       </p>
+      <p>
+        See absolute in action below. Now that our box has been removed from the
+        normal flow, it appears on top of our original box and is moved relative
+        to it's parent's position (in this example, an invisible div).
+      </p>
+      <figure>
+        <img
+          src="../images/absolute.png"
+          alt="Example image of CSS static positioning"
+        />
+        <figcaption>
+          Absolute elements are removed from the normal flow and positioned
+          relative to their closest parent
+        </figcaption>
+      </figure>
       <p>
         Fixed: Fixed positions are also removed from the normal document flow
         but are set relative to the viewport. So the element will always stay in
