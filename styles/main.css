@@ -98,7 +98,8 @@ main {
   background-color: rgba(255, 255, 255, 0.884);
   width: 80%;
   margin-left: 10%;
-  border-radius: 5%;
+  border-radius: 20pt;
+  padding: 5px 10px 5px 10px;
 }
 
 li {
@@ -117,4 +118,14 @@ h4 {
 
 #staticExample {
   width: 95%;
+}
+
+#fixDiv {
+  position: fixed;
+  width: 120px;
+  height: 20px;
+  background-color: rgb(83, 0, 128);
+  bottom: 0;
+  right: 0;
+  color: rgb(83, 0, 128);
 }

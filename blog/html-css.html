@@ -106,22 +106,41 @@
         />
         <figcaption>
           Absolute elements are removed from the normal flow and positioned
-          relative to their closest parent
+          relative to their closest parent.
         </figcaption>
       </figure>
+      <h4>Fixed It</h4>
       <p>
-        Fixed: Fixed positions are also removed from the normal document flow
-        but are set relative to the viewport. So the element will always stay in
-        the same place on-screen no matter where the page is scrolled. Fixed
+        Fixed positions are also removed from the normal document flow but are
+        set relative to the viewport. So the element will always stay in the
+        same place on-screen no matter where the page is scrolled. Fixed
         elements can be used for things like scroll bars or navigation where you
         want them to always remain in view.
       </p>
+
       <p>
-        BONUS: Sticky: Sticky positions behave just like relative positions, but
+        Normally this is where I would include an example of an element with <span>positon: fixed;</span>, 
+        however there's been one in front of you all along. Take a look at the bottom right corner of your 
+        screen and try highlighting it to find the hidden message.
+      </p>
+      <div id="fixDiv">Have a nice day!</div>
+      </figure>
+      <h4>Bonus Round: Let's get sticky</h4>
+      <p>
+        Sticky positions will initially behave just like relative positions, but
         they do something special once a certain scroll point is reached - they
         toggle to a fixed position instead and will remain in that position to
         accompany you on your journey scrolling through the page.
       </p>
+      <figure>
+        <img
+          src="../images/sticky.gif"
+          alt="Example image of CSS static positioning"
+        />
+        <figcaption>
+          Sticky Elements will start with a relative position but become fixed once a certain scrollpoint is reached.
+        </figcaption>
+      </figure>
     </main>
     <!-- this is a comment. -->
   </body>
