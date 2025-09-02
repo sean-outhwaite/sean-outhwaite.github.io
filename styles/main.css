@@ -50,10 +50,6 @@ ul {
   list-style-type: upper-roman;
 }
 
-li {
-  /* font-weight: ; */
-}
-
 .flex-container-vertical {
   display: flex;
   flex-direction: column;
