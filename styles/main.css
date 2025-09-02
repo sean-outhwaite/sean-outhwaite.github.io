@@ -110,3 +110,11 @@ li {
   width: 250px;
   border-color: rgb(85, 85, 85);
 }
+
+h4 {
+  font-size: 16pt;
+}
+
+#staticExample {
+  width: 95%;
+}

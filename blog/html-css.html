@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Positioning</title>
+    <meta charset="UTF-8" />
+    <link href="../styles/main.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <a href="../index.html"> <button id="home">Home</button></a>
+    <main>
+      <div class="flex-container-nav">
+        <a href="../index.html">
+          <button id="previous" class="nav">Previous</button></a
+        >
+        <h1>CSS Positioning</h1>
+        <a href="../index.html"> <button id="next" class="nav">Next</button></a>
+      </div>
+      <h2>Or: How I learned To Stop Worrying And Love The DOM</h2>
+      <h3>03 September 2025</h3>
+
+      <h4>What is "normal flow" anyway?</h4>
+      <p>
+        I know you came here to learn about how to position elements on a page
+        using CSS, but before we get into that it's important to understand what
+        we mean when we talk about <em>normal flow</em>. Simply put, Normal Flow
+        is just the default way that elements are laid out on a page without any
+        additional CSS styling. In practice that means that (in English at
+        least...) block elements (e.g. paragraphs, divs) will start from the top
+        and will be seperated onto new lines and that inline elements (e.g.
+        spans) will display from left to right without being moved to a new
+        line.
+      </p>
+      <h4>Static Shock</h4>
+      <p>
+        By default elements are given a position property of “static”, this
+        means they will remain in their original position as per the normal flow
+        and will not be affected by any changes to position properties such as
+        “top”, “left”, etc.<br />
+        Take a look at the example below. Notice that even when applying large
+        changes to the top & left position properties the box stays in it's
+        original position.
+      </p>
+      <figure>
+        <img
+          id="staticExample"
+          src="../images/static.png"
+          alt="Example image of CSS static positioning"
+        />
+        <figcaption>
+          Static elements don't move when position properties are changed.
+        </figcaption>
+      </figure>
+      <h4>Getting to know your Relatives</h4>
+      <p>
+        Changing that property to “relative” means you can manipulate that
+        elements placement relative to its original position. E.g. if you set
+        the “left” property to 30px it will move 30px away from the left side of
+        its original position. It’s important to note that with relative
+        positioning, the element will stay inside the normal document flow i.e.
+        it will not affect the positioning of other nearby elements. “the
+        element remains in the normal flow of the document and the offset is
+        applied relative to its original position”
+      </p>
+      <h4>Absolutely Amazing</h4>
+      <p>
+        Absolute: Changing the property to absolute will remove the element from
+        the normal document flow and will allow you to change its position. This
+        time the changes will not be relative to its original position (as it
+        doesn’t have one!) but instead they will be relative to it’s closest
+        parent element - not just it’s closest parent though, it will look for
+        the closest ancestor with a property value other than static. This means
+        it can work its way all the way up to the html or viewport elements.
+      </p>
+      <p>
+        Fixed: Fixed positions are also removed from the normal document flow
+        but are set relative to the viewport. So the element will always stay in
+        the same place on-screen no matter where the page is scrolled. Fixed
+        elements can be used for things like scroll bars or navigation where you
+        want them to always remain in view.
+      </p>
+      <p>
+        BONUS: Sticky: Sticky positions behave just like relative positions, but
+        they do something special once a certain scroll point is reached - they
+        toggle to a fixed position instead and will remain in that position to
+        accompany you on your journey scrolling through the page.
+      </p>
+    </main>
+    <!-- this is a comment. -->
+  </body>
+</html>
