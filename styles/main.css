@@ -39,12 +39,14 @@ span {
   border-radius: 15%;
   border-style: none;
   background-color: rgb(149, 2, 182);
-  color: rgba(255, 255, 255, 0.884);
+  color: rgb(240, 240, 240);
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: underline;
   padding: 10px 15px 10px 15px;
   font-weight: 700;
   font-style: normal;
+  font-size: 15pt;
+  cursor: pointer;
 }
 
 ul {
@@ -80,13 +82,14 @@ h3 {
   border-radius: 10%;
   border-style: none;
   background-color: rgb(2, 182, 131);
-  color: rgba(255, 255, 255, 0.884);
+  color: rgb(240, 240, 240);
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: underline;
   padding: 10px 15px 10px 15px;
   font-weight: 700;
   font-style: normal;
   margin: 15px 20px 10px 20px;
+  cursor: pointer;
 }
 
 main {
