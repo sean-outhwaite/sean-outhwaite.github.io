@@ -56,7 +56,7 @@ ul {
 .flex-container-vertical {
   display: flex;
   flex-direction: column;
-  height: 180px;
+  height: 220px;
   align-items: center;
   justify-content: center;
 }
@@ -99,4 +99,14 @@ main {
   width: 80%;
   margin-left: 10%;
   border-radius: 5%;
+}
+
+li {
+  border-style: solid;
+  border-radius: 5%;
+  margin: 5px;
+  padding: 4px;
+  box-sizing: border-box;
+  width: 250px;
+  border-color: rgb(85, 85, 85);
 }
