@@ -104,7 +104,7 @@ main {
 
 li {
   border-style: solid;
-  border-radius: 5%;
+  border-radius: 5pt;
   margin: 5px;
   padding: 4px;
   box-sizing: border-box;
