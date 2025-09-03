@@ -133,3 +133,21 @@ h4 {
   right: 0;
   color: rgb(83, 0, 128);
 }
+
+figcaption {
+  font-size: 10pt;
+}
+
+#snow {
+  display: flex;
+  margin: -10px;
+  flex-wrap: wrap-reverse;
+}
+
+#snow-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  max-height: 150pt;
+}
