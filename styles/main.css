@@ -113,8 +113,11 @@ li {
 }
 
 h4 {
+  justify-self: center;
+  width: 50%;
   font-size: 16pt;
-  margin-bottom: 5px;
+  padding-top: 40px;
+  border-top: solid;
 }
 
 #staticExample {
