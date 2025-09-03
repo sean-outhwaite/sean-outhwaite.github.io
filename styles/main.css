@@ -162,13 +162,14 @@ figcaption {
 #fixDiv {
   position: fixed;
   width: 120px;
-  height: 20px;
+  height: 30px;
   background-color: rgb(83, 0, 128);
   bottom: 0;
   right: 0;
   color: rgb(83, 0, 128);
   border-top-left-radius: 5pt;
   font-size: 10pt;
+  padding-top: 15px;
 }
 
 #snow {
