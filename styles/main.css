@@ -130,6 +130,7 @@ figcaption {
   width: 95%;
 }
 
+/* Used for the fixed position example in the CSS blog */
 #fixDiv {
   position: fixed;
   width: 120px;
@@ -138,6 +139,8 @@ figcaption {
   bottom: 0;
   right: 0;
   color: rgb(83, 0, 128);
+  border-top-left-radius: 5pt;
+  font-size: 10pt;
 }
 
 #snow {
