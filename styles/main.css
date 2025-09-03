@@ -12,6 +12,12 @@ html {
   }
 }
 
+@media (min-width: 1440px) {
+  main {
+    max-width: 40%;
+  }
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   font-optical-sizing: auto;
@@ -139,6 +145,7 @@ figcaption {
   font-family: 'Montserrat', Helvetica, sans-serif;
   text-decoration: underline;
   padding: 10px 15px 10px 15px;
+  margin-bottom: 5px;
   font-weight: 450;
   font-style: normal;
   font-size: 1rem;
