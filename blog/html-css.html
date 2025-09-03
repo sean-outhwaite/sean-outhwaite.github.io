@@ -30,22 +30,31 @@
       <p>
         I know you came here to learn about how to position elements on a page
         using CSS, but before we get into that it's important to understand what
-        we mean when we talk about <em>normal flow</em>. Simply put, Normal Flow
+        we mean when we talk about <em>normal flow</em>.
+      </p>
+      <p>
+        Simply put, Normal Flow
         is just the default way that elements are laid out on a page without any
         additional CSS styling. In practice that means that (in English at
         least...) block elements (e.g. paragraphs, divs) will start from the top
         and will be seperated onto new lines and that inline elements (e.g.
         spans) will display from left to right without being moved to a new
         line.
+      </p> 
+      <p>
+        Think of it just like a book, paragraphs go underneath each other 
+        and you read the words from left to right 📖
       </p>
       <h4>Static Shock</h4>
       <p>
-        By default elements are given a position property of “static”, this
+        By default, elements are given a position property of “static”, this
         means they will remain in their original position as per the normal flow
-        and will not be affected by any changes to position properties such as
-        “top”, “left”, etc.<br />
+        and will not be affected by any changes to positional properties such as
+        “top”, “left”, etc.
+      </p>
+      <p>
         Take a look at the example below. Notice that even when applying large
-        changes to the top & left position properties the box stays in it's
+        changes to the top & left properties the box stays in its
         original position.
       </p>
       <figure>
@@ -63,12 +72,17 @@
         Setting the position property to “relative” means you can manipulate
         that element's placement <span>relative</span> to its original position.
         E.g. if you set the “left” property to 30px it will move 30px away from
-        the left side of its original position. <br />It’s important to note
+        the left side of its original position.
+      </p>
+      <p>
+        It’s important to note
         that with relative positioning, any gaps created by changes made to an 
         element's position will not be filled by other content - i.e. blocks will 
-        still be separate lines and won't overlap. <br />
+        still be separate lines and won't overlap.
+      </p>
+      <p>
         Notice in the example below that our new box has been moved away from
-        it's original positions on the top and left sides but it still remains
+        its original positions on the top and left sides but it still remains
         in the document flow underneath our original box.
       </p>
       <figure>
@@ -85,20 +99,25 @@
       <p>
         Changing the position property to absolute will remove the element from
         the normal document flow and allow you to change its position.
-        <br />This time the changes will not be relative to its original
+      </p>
+      <p>
+        This time the changes will not be relative to its original
         position (as it doesn’t have one!) but instead they will be relative to
-        it’s closest parent element - not just it’s closest parent though,
+        its closest parent element - not just its closest parent though,
         <span
           >it will look for the closest ancestor with a property value other
           than static</span
-        >. <br />This is important to remember as it means it can work its way
+        >. 
+      </p>
+      <p> 
+        This is important to remember as it means it can work its way
         all the way up to the html or viewport elements if none of its other
         parents have their position property set to something other than static.
       </p>
       <p>
         See absolute in action below. Now that our box has been removed from the
         normal flow, it appears on top of our original box and is moved relative
-        to it's parent's position (in this example, an invisible div).
+        to its parent's position (in this example, an invisible div).
       </p>
       <figure>
         <img
@@ -110,7 +129,7 @@
           relative to their closest parent.
         </figcaption>
       </figure>
-      <div class="flex-container-horiztonal"><h4>Fixed It</h4></div>
+      <h4>Fixed It</h4>
       <p>
         Fixed positions are also removed from the normal document flow but are
         set relative to the viewport. So the element will always stay in the
