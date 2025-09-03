@@ -41,7 +41,6 @@ h4 {
 
 p {
   font-size: 1rem;
-  margin-left: 20px;
 }
 
 h1 {
@@ -178,6 +177,12 @@ figcaption {
   html {
     font-size: 12px;
   }
+  main {
+    width: fit-content;
+  }
+  body {
+    margin: 0;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -186,7 +191,8 @@ figcaption {
   }
 }
 
-@media (max-width: 550px) {
+/* Can switch the nav to a column, but doesn't seem needed now that the container will fit content */
+/* @media (max-width: 550px) {
   .flex-container-nav {
     flex-wrap: wrap;
     justify-content: center;
@@ -200,4 +206,4 @@ figcaption {
   h1 {
     order: 3;
   }
-}
+} */
