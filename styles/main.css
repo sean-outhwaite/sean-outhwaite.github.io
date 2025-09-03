@@ -6,18 +6,6 @@ html {
   font-size: 16px;
 }
 
-@media (max-width: 600px) {
-  html {
-    font-size: 12px;
-  }
-}
-
-@media (min-width: 1440px) {
-  main {
-    max-width: 40%;
-  }
-}
-
 body {
   font-family: 'Montserrat', sans-serif;
   font-optical-sizing: auto;
@@ -110,6 +98,7 @@ figcaption {
   justify-content: space-between;
   margin-top: 20px;
   width: 100%;
+  flex-wrap: nowrap;
 }
 
 .nav {
@@ -183,4 +172,32 @@ figcaption {
   object-fit: cover;
   object-position: center;
   max-height: 150pt;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1440px) {
+  main {
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 550px) {
+  .flex-container-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #previous {
+    order: 1;
+  }
+  #next {
+    order: 2;
+  }
+  h1 {
+    order: 3;
+  }
 }
