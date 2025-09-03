@@ -14,7 +14,6 @@ body {
 main {
   background-color: rgba(245, 243, 243, 0.938);
   width: 80%;
-  margin-left: 10%;
   border-radius: 20pt;
   padding: 5px 10px 5px 10px;
 }
@@ -24,7 +23,6 @@ li {
   border-radius: 5pt;
   margin: 5px;
   padding: 4px;
-  width: 250px;
   border-color: rgb(85, 85, 85);
 }
 
@@ -57,6 +55,7 @@ span {
 
 ul {
   list-style-type: upper-roman;
+  padding: 0;
 }
 
 h3 {
@@ -65,6 +64,14 @@ h3 {
 
 figcaption {
   font-size: 10pt;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px auto;
+  align-items: center;
 }
 
 .flex-container-vertical {
@@ -103,7 +110,10 @@ figcaption {
 }
 
 #profile {
-  width: 250px;
+  width: 80%;
+  height: 80%;
+  object-position: center;
+  max-height: 150pt;
 }
 
 #blog-list {
@@ -146,7 +156,6 @@ figcaption {
 #snow {
   display: flex;
   margin: -10px;
-  flex-wrap: wrap-reverse;
 }
 
 #snow-img {
