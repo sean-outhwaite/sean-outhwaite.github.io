@@ -13,9 +13,13 @@ const blogTitle = currentBlog.substring(
 )
 
 const nextBlog = function () {
-  document.querySelector('#next').href = `${
-    blogs[blogs.indexOf(blogTitle) + 1]
-  }.html`
+  if (blogs[blogs.indexOf(blogTitle) + 1] !== undefined) {
+    document.querySelector('#next').href = `${
+      blogs[blogs.indexOf(blogTitle) + 1]
+    }.html`
+  } else {
+    document.querySelector('#nextBtn').classList.add('disabledButton')
+  }
 }
 nextBlog()
 
