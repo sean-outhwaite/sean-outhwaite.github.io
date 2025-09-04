@@ -114,6 +114,11 @@ figcaption {
   cursor: pointer;
 }
 
+.disabledButton {
+  background-color: rgb(156, 156, 156);
+  cursor: not-allowed;
+}
+
 #profile {
   width: 80%;
   height: 80%;
