@@ -1,4 +1,4 @@
-# Swan Dive [![pages-build-deployment](https://github.com/sean-outhwaite/sean-outhwaite.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/sean-outhwaite/sean-outhwaite.github.io/actions/workflows/pages/pages-build-deployment)
+# :swan: Swan Dive [![pages-build-deployment](https://github.com/sean-outhwaite/sean-outhwaite.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/sean-outhwaite/sean-outhwaite.github.io/actions/workflows/pages/pages-build-deployment)
 
 A work-in-progress personal & technical blog.
 
