@@ -11,8 +11,8 @@
   </head>
 
   <body>
-    <nav class="navbar">
-      <div class="" navbar-menu>
+    <nav class="navbar is-info">
+      <div class="navbar-menu">
         <div class="navbar-start">
           <a class="navbar-item"> Home </a>
           <a class="navbar-item"> Blog List </a>
@@ -27,7 +27,40 @@
       </div>
     </nav>
     <main>
-      <h1 class="title-1">Hello World</h1>
+      <div class="box">
+        <content>
+          <h1 class="title-1">Hello World</h1>
+          <form class="box">
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="email"
+                  placeholder="e.g. alex@example.com"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control">
+                <input class="input" type="password" placeholder="********" />
+              </div>
+            </div>
+
+            <button class="button is-primary">Sign in</button>
+          </form>
+          <div class="notification">
+            <button class="delete"></button>
+            This is some importantinformation.
+            <strong>Very important</strong>, tempus quis placerat ut, porta nec
+            nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida
+            purus diam, et dictum <a>felis venenatis</a> efficitur.
+          </div>
+        </content>
+      </div>
+      <progress class="progress is-link" value="15" max="100">15%</progress>
     </main>
     <!-- <script src="../script.js"></script> -->
   </body>
