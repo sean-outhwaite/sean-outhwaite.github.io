@@ -38,7 +38,7 @@ h4 {
 }
 
 h1 {
-  color: rgb(0, 119, 255);
+  color: rgb(0, 170, 255);
 }
 
 h2 {
@@ -47,7 +47,7 @@ h2 {
 }
 
 span {
-  color: var(--highlighter);
+  color: var(--highlighter) !important;
 }
 
 ul {
@@ -102,9 +102,8 @@ figcaption {
 .nav {
   border-radius: 15pt;
   border-style: none;
-  background-color: rgb(2, 182, 131);
+  background-color: rgba(2, 182, 131, 0.734);
   color: rgb(240, 240, 240);
-  text-decoration: underline;
   padding: 10px 15px 10px 15px;
   font-weight: 500;
   margin: 15px 20px 10px 20px;
@@ -120,14 +119,19 @@ figcaption {
   display: flex;
   border-radius: 15pt;
   border-style: none;
-  background-color: rgb(149, 2, 182);
+  background-color: rgba(149, 2, 182, 0.404);
   color: rgb(240, 240, 240);
-  text-decoration: underline;
+  text-decoration: none !important ;
   padding: 10px 15px 10px 15px;
   margin-bottom: 5px;
   font-weight: 450;
   cursor: pointer;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Home button keeps inherting underline, unsure why the next & prev buttons aren't doing this */
+#homeAnchor {
+  text-decoration: none;
 }
 
 /* IDs */
