@@ -4,6 +4,7 @@ const blogs = [
   'html-css',
   'identity-values',
   'learning-plan',
+  'emotional-intelligence',
 ]
 
 const currentBlog = window.location.href
