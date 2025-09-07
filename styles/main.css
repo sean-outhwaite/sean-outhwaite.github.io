@@ -38,7 +38,8 @@ h4 {
 }
 
 h1 {
-  color: rgb(0, 170, 255);
+  color: #027db6d7;
+  font-size: 3rem;
 }
 
 h2 {
@@ -134,7 +135,7 @@ figcaption {
   text-decoration: none;
 }
 
-/* IDs */
+/* Misc Selectors */
 
 #profile {
   width: 80%;
@@ -149,6 +150,14 @@ figcaption {
 
 .exampleImage {
   width: 95%;
+}
+
+/* Creates the "dive" effect of the home page title */
+#dive {
+  display: inline-block;
+  position: relative;
+  transform: rotate(16deg);
+  top: 14px;
 }
 
 /* Used for the fixed position example in the CSS blog */
