@@ -25,10 +25,111 @@
         <a id="next"><button id="nextBtn" class="nav">Next</button></a>
       </div>
       <h2>more js stuff</h2>
-      <h3>08 September 2025</h3>
+      <h3>10 September 2025</h3>
 
-      <h4>j</h4>
-      <p>here's some stuff about JS</p>
+      <h4>The Spice Must Flow</h4>
+      <p class="quote">
+        “Control flow is the order in which the computer executes statements in
+        a script.” - MDN
+      </p>
+      <p>
+        Control flow is kind of like a maze: you enter at the start, then may
+        encounter different forks in the path and decide which one to go down or
+        you might hit a dead end and have to loop back.
+      </p>
+      <p>
+        Take a look at this diagram showing the “control flow” of making coffee.
+        Just like an IF/ELSE statement depending on how tired you are, you might
+        make more or less coffee (or shouldn’t have any at all!). Once you’re
+        finished your first iteration of the coffee making loop, maybe it wasn’t
+        enough and you have to start making more.
+      </p>
+      <div class="flex-container-horizontal">
+        <img class="exampleImage" src="/images/controlFlow.png" />
+      </div>
+
+      <h4>What is the DOM?</h4>
+      <p>
+        The DOM is a representation of all of the content of a webpage, handily
+        provided in the format of a javascript object. It allows you to access
+        and change the content of a page programatically.
+      </p>
+
+      <p>
+        You can think of the DOM like a tree, parts of the webpage split and
+        branch down into different nodes.
+      </p>
+      <img class="exampleImage" src="/images/domTree.png" />
+      <p>
+        It’s important to note that the DOM is a living object (like a tree),
+        any changes you make to the DOM will apply to the HTML/CSS and if the
+        HTML or CSS is changed, the DOM will reflect that.
+      </p>
+      <p>
+        Although it may seem like the DOM is part of javascript, it’s actually
+        provided by the browser along with an API that lets javascript (or any
+        programming language) interact with it.
+      </p>
+      <h4>I Object!</h4>
+      <p>
+        Arrays and objects are really similar (well technically they’re
+        identical as an array is an object but anyway…), they're both used to
+        hold values that you may want to access later.
+      </p>
+      <p>
+        Arrays hold values in an ordered list and you access a value using its
+        index (position) in the array. They begin with 0 and count up from
+        there, e.g. to access the first element in an array you would want to
+        look for index 0 (array[0]), the second item index 1 (array[1]), etc.
+      </p>
+      <p>
+        Objects however, store values with a key 🔑. The order of the data
+        doesn’t matter at all! This can be seen when logging an object to the
+        console, the order it was written in may be different than how the
+        browser returns it.
+      </p>
+      <figure>
+        <img src="/images/objectOrder.png" />
+        <figcaption>
+          The top item is displayed at the bottom when logged to the console.
+        </figcaption>
+      </figure>
+      <p>
+        To access a value in an array you simply need to ask for it with the
+        key. This can be done with bracket notation like arrays e.g. object[key]
+        or you can use dot notation e.g. object.key.
+      </p>
+      <p>
+        Which one should you use? Well that really depends. Bracket notation
+        allows for that key value to be an expression, so if you don’t know
+        explicitly what the key will be then you should use brackets.
+      </p>
+
+      <h4>Let's Get Func-y</h4>
+      <p>
+        Functions are essentially re-usable pieces of code that do something.
+      </p>
+      <p>
+        That could be adding numbers together, updating some text somewhere,
+        looping through an array, the possibilities are endless! Functions can
+        even call other functions, which in turn can call other functions, which
+        in turn can call other functions, which... sorry I'll stop now.
+      </p>
+      <p>
+        One of the core principles of clean code is DRY - don’t repeat yourself
+        (ignore the previous sentence).
+      </p>
+      <p>
+        Functions exist to help us adhere to that. Basically, whenever there’s
+        something you are going to want to do multiple times in your code - you
+        should make it a function.
+      </p>
+      <p>
+        Rather than repeating the code every single time you want to do that
+        thing, you can just call the function as needed. And if you ever need to
+        change how that functionality works, you now only need to do it in one
+        place instead of everywhere you're doing that thing.
+      </p>
     </main>
     <script src="../script.js"></script>
   </body>

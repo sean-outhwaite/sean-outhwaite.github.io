@@ -152,6 +152,9 @@ figcaption {
   width: 95%;
 }
 
+.quote {
+  font-style: italic;
+}
 /* Creates the "dive" effect of the home page title */
 #dive {
   display: inline-block;
