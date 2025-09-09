@@ -5,6 +5,7 @@ const blogs = [
   'identity-values',
   'learning-plan',
   'emotional-intelligence',
+  'javascript-dom',
 ]
 
 const currentBlog = window.location.href
