@@ -189,17 +189,20 @@ li:hover {
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-content: flex-start;
-  row-gap: 10px;
+  row-gap: 15px;
 }
 
 .blog-preview {
   padding: 20px 10px;
   width: 350px;
   height: 250px;
-  color: rgb(240, 240, 240);
-  background: #027db6b3;
+  /* color: rgb(240, 240, 240);
+  background: #027db6b3; */
+  color: black;
+  background-color: rgba(240, 240, 240, 0.65);
   align-self: stretch;
   border-radius: 20pt;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .blog-preview h4 {
@@ -215,7 +218,6 @@ li:hover {
 .blog-preview img {
   object-fit: cover;
   border: 1pt solid rgb(14, 203, 168);
-  /* background-color: rgb(255, 255, 255); */
   width: 80%;
   max-height: 35%;
   border-radius: 5pt;
@@ -229,9 +231,10 @@ li:hover {
 }
 
 .blog-preview:hover {
-  color: black !important;
-  background-color: rgba(240, 240, 240, 0.65);
-  border: solid black;
+  color: rgb(240, 240, 240);
+  background: #027db6b3;
+  /* color: black !important;
+  background-color: rgba(240, 240, 240, 0.65); */
 }
 
 /* Some tricks to get the banner image displayed full width of the container */
