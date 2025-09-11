@@ -214,7 +214,7 @@ li:hover {
 
 .blog-preview img {
   object-fit: cover;
-  border: 1pt solid rgb(240, 240, 240);
+  border: 1pt solid rgb(14, 203, 168);
   /* background-color: rgb(255, 255, 255); */
   width: 80%;
   max-height: 35%;
