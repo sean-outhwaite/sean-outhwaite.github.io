@@ -21,14 +21,6 @@ main {
   padding: 5px 10px 5px 10px;
 }
 
-li {
-  border-radius: 5pt;
-  margin: 5px;
-  padding: 15px;
-  color: rgb(240, 240, 240);
-  background: #027db6d7;
-}
-
 h4 {
   justify-self: center;
   width: 50%;
@@ -51,22 +43,12 @@ span {
   color: var(--highlighter) !important;
 }
 
-ul {
-  list-style-type: upper-roman;
-  padding: 0;
-}
-
 h3 {
   margin-top: 10px;
 }
 
 figcaption {
   font-size: 0.8rem;
-}
-
-li:hover {
-  color: black;
-  background-color: rgba(255, 255, 255, 0.65);
 }
 
 /* Containers */
@@ -135,23 +117,11 @@ li:hover {
 }
 
 /* Home button keeps inherting underline, unsure why the next & prev buttons aren't doing this */
-#homeAnchor,
-.blogList {
+#homeAnchor {
   text-decoration: none;
 }
 
 /* Misc Selectors */
-
-#profile {
-  /* width: 80%;
-  height: 80%; */
-  object-position: center;
-  max-height: 200px;
-}
-
-#blog-list {
-  list-style-position: inside;
-}
 
 .exampleImage {
   width: 95%;
@@ -196,8 +166,6 @@ li:hover {
   padding: 20px 10px;
   width: 350px;
   height: 250px;
-  /* color: rgb(240, 240, 240);
-  background: #027db6b3; */
   color: black;
   background-color: rgba(240, 240, 240, 0.65);
   align-self: stretch;
@@ -222,10 +190,7 @@ li:hover {
   max-height: 35%;
   border-radius: 5pt;
 }
-.blog-preview h5 {
-  margin: 1rem;
-}
-
+.blog-preview h5,
 .blog-preview p {
   margin: 1rem;
 }
@@ -233,8 +198,6 @@ li:hover {
 .blog-preview:hover {
   color: rgb(240, 240, 240);
   background: #027db6b3;
-  /* color: black !important;
-  background-color: rgba(240, 240, 240, 0.65); */
 }
 
 /* Some tricks to get the banner image displayed full width of the container */
@@ -272,20 +235,3 @@ li:hover {
     max-width: 50%;
   }
 }
-
-/* Can switch the nav to a column, but doesn't seem needed now that the container will fit content */
-/* @media (max-width: 550px) {
-  .flex-container-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  #previous {
-    order: 1;
-  }
-  #next {
-    order: 2;
-  }
-  h1 {
-    order: 3;
-  }
-} */
