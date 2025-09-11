@@ -223,7 +223,7 @@ figcaption {
     font-size: 12px;
   }
   main {
-    width: fit-content;
+    width: auto;
   }
   body {
     margin: 0;
