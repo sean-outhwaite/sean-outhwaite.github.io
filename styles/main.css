@@ -143,8 +143,8 @@ li:hover {
 /* Misc Selectors */
 
 #profile {
-  width: 80%;
-  height: 80%;
+  /* width: 80%;
+  height: 80%; */
   object-position: center;
   max-height: 150pt;
 }
