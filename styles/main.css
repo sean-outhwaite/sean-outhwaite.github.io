@@ -48,10 +48,11 @@ figcaption {
 }
 
 footer {
-  text-align: start;
-  text-decoration: none;
+  margin-top: 1vh;
+  margin-bottom: 0.5vh;
+  width: 20%;
+  justify-self: center;
 }
-
 /* Containers */
 
 .container {
@@ -122,6 +123,10 @@ footer {
 }
 
 /* Misc Selectors */
+
+.gitLogo {
+  width: 15%;
+}
 
 .exampleImage {
   width: 95%;
