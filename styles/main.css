@@ -47,6 +47,11 @@ figcaption {
   font-size: 0.8rem;
 }
 
+footer {
+  text-align: start;
+  text-decoration: none;
+}
+
 /* Containers */
 
 .container {
