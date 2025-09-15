@@ -30,101 +30,130 @@
 
       <h4>Simple Problem</h4>
       <p>
-        While going through my work at Dev Academy, I came across a task to delete a particular piece of information from an object.
+        While going through my work at Dev Academy, I came across a task to
+        delete a particular piece of information from an object.
       </p>
       <p>
-         Kind of like, deleting a phone number from your contacts list. Sounds easy right? They even told me to use the 
-         in built delete functionality in JavaScript!
+        Kind of like, deleting a phone number from your contacts list. Sounds
+        easy right? They even told me to use the in built delete functionality
+        in JavaScript!
       </p>
       <p>
-        The problem was, I had never used this functionality before and wasn't exactly sure how to do it.
+        The problem was, I had never used this functionality before and wasn't
+        exactly sure how to do it.
       </p>
       <p>
-        So I googled "js object methods" and scrolled through the list on the MDN site (the bible of JS documentation).
+        So I googled "js object methods" and scrolled through the list on the
+        MDN site (the bible of JS documentation).
       </p>
       <p>
-        But there was no delete method listed there 😱 I decided to get a bit more specifc and searched for "js object delete", and to 
-        my relief the second result was a w3schools guide on how to use the delete operator with objects.
+        But there was no delete method listed there 😱 I decided to get a bit
+        more specifc and searched for "js object delete", and to my relief the
+        second result was a w3schools guide on how to use the delete operator
+        with objects.
       </p>
       <p>
-        I know I could have just googled "how to delete a property from an object in js" or even asked AI, but I didn't just want 
-        to be told the answer, I wanted to learn how to do it myself by learning how the operator works.
+        I know I could have just googled "how to delete a property from an
+        object in js" or even asked AI, but I didn't just want to be told the
+        answer, I wanted to learn how to do it myself by learning how the
+        operator works.
       </p>
 
       <h4>Elegantly solved a problemn</h4>
       <p>
-        On reflection, I’ve already been incorporating some of the principles of neuroplasticity into my study
-       - by practicing coding everyday (even on weekends!) I’m strengthening the neuron pathways associated
-        with those skills.
+        One task that I had some trouble with initially was taking some text and
+        returning it in reverse, e.g. "word" should become "drow".
       </p>
       <p>
-        Repeating and revising the things I’ve learned over the previous weeks helps to prevent those existing
-        pathways from being “pruned” and keeps that knowledge more accessible for my brain to build new
-       connections to as I continue my study.
+        I knew that strings (text) didn't have built in functionality to do
+        something like this, but arrays did. So I wrote down the steps that I
+        would need to do to complete this, using pseudocode to plan my approach.
+      </p>
+      <p>
+        I then went through and implemented each of the steps, managing to do it
+        all on one line, feeling pretty proud I hit the test button and... ❌
+        the test failed.
+      </p>
+      <p>
+        I was sure I had done the right things, so I double checked and looked
+        up each of the methods I was using to make sure that they did what I
+        thought they did. Everything looked good, so why was it failing??
+      </p>
+      <p>
+        My next step was to start logging values to the console, basically
+        telling the program " show me what the word looks like at this point in
+        the code". The solution I had written was all one line though, so I
+        first had to break it down into multiple seperate steps.
+      </p>
+      <p>
+        I started by logging the value after attempting to reverse my new array.
+        It just showed me an array with a single value, which was the original
+        word. Ok, so something is wrong earlier in the process.
+      </p>
+      <p>
+        I then logged the result of the very first step - splitting the string
+        into an array. Sure enough, it spat out the same result as the previous
+        log. So I knew something was wrong with this code, I read over it again
+        and saw my mistake.
+      </p>
+      <p>
+        Groaning as it was such a minor error - when you try to split up a
+        string, you have to tell it where you want it to split it up e.g. at
+        every space. I didn't include this information, and so by default it
+        will just give you an array with the whole string as a single value.
       </p>
 
-      <p>Something I would like to try and practice more is applying my learning to something more meaningful
-       to me - by applying that learning to something important to me I can improve my chances of success
-        in understanding and retaining that information.</p>
-      <h4>How to Get Good</h4>
       <p>
-        A lot of it comes down to just general health advice (so you should do these things even if you’re not
-        specifically trying to increase your neuroplasticity) like eating a healthy diet, regular physical
-       exercise, and maintaining a good sleep schedule (something I struggle with).
-      </p>
-      <p>If you’re already doing all of that, good job you’re off to a great start!</p>
-      <p>
-     You’re not done yet though, if you want to maximise your neuroplasticity you should also consider
-      trying some of the following:
-        <ul>
-          <li>Learn something new! Pick up an instrument, try a new language.</li>
-          <li>Socialisation for neuroplastication - I don’t know if that’s actually a word, but yes, go out and talk to people, go to a concert, do whatever it is you like doing outside of your house with other people.</li>
-          <li>Take a vacation - Yes really. Go somewhere new and experience a different place.</li>
-        </ul>
-      </p>
-      <h4>Growth Mindsetting</h4>
-      <p>
-        Growth mindset is the recognition that you have the capacity to learn and grow, in comparison a fixed 
-        mindset is one that believes that your ability or intelligence is pre-determined and cannot be changed.
-      </p>
-      <p>Having a growth mindset is important when learning, especially when confronted with obstacles or 
-      difficulties. Rather than perceiving those experiences negatively and believing that they’re 
-      insurmountable, a growth mindset allows you to reflect and learn from them, leveraging the principles 
-      of neuroplasticity you can adapt and improve your chances of overcoming them.
-      </p>
-      <h4>Growing Up</h4>
-      <p>
-        In doing this research, I was quite surprised by the amount of studies and data that backs these theories up. 
+        It was frustrating that I'd spent all of this time troubleshooting such
+        a simple issue, but it was so satisfying to find the bug and fix it. I
+        learnt a few things in this process; that I should pay more attention
+        when reading my own code as the first step and that when logging values
+        to the console, I should really just start from the top and not assume
+        that what I've done earlier is working fine.
       </p>
       <p>
-        When you’re young you always hear things like “you can do anything you put your mind to”, and they sound so 
-        hyperbolic that they’re almost unbelievable. 
+        Ultimately though, I am really happy with how the solution turned out.
+        Getting the functionality all on one line was satisfying and looks very
+        clean.
+      </p>
+      <h4>Reflections</h4>
+      <p>
+        After going through this sprint's Kata as well as last sprint's JS
+        challenges, I feel pretty confident in using problem-solving techniques.
       </p>
       <p>
-        It was refreshing to see evidence that this kind of statement is pretty much true, and that there
-        are practical ways you can approach learning to make them a reality.
-      </p>
-      <h4>Personal Growth</h4>
-      <p>
-        When I find something difficult I tend to be quite critical about myself and my own ability. 
+        I have frequently been using pseudocode to start building a solution,
+        talking it out to myself as I ago. When I encounter issues I'm able to
+        read error messages or log values to the console to find where something
+        is breaking.
       </p>
       <p>
-        Going forward I will actively try to be more positive when I encounter something I have trouble understanding,
-         and give myself more credit for the effort and attempt to understand it.
+        Searching for information online is something I do frequently both in my
+        personal life and as part of the various jobs I've held in the past.
+        Having grown up on the internet, my Google-fu is well honed.
+      </p>
+      <h4>SOS</h4>
+      <p>
+        If there is something I haven't been able to find the answer for, or
+        have found conflicting answers - I've raised those for discussion in our
+        stand ups for input from my peers & facilitator.
       </p>
       <p>
-         I really like the “not yet” attitude Carol Dweck talks about in <a href="https://www.ted.com/talks/carol_dweck_the_power_of_believing_that_you_can_improve">her TED presentation</a> and hope to adopt this kind of mindset.
+        I encountered an issue getting started on this sprint's kata exercises,
+        where when trying to run npm install in the repo I received an error.
       </p>
-      <h4>Want to know more?</h4>
       <p>
-        A lot of blogs/articles online tend to just regurgitate the same points, and I couldn’t find 
-        any that at least did it in an engaging or fun format. I actually found <a href="https://www.reddit.com/r/getdisciplined/comments/14jkxho/method_adults_that_have_actually_developed_a/">this reddit thread</a>
-        to be a great resource, it’s real people discussing their personal experiences with developing
-        a growth mindset.
+        I know the help desk is there to support me with this kind of thing, but
+        I did want to try and solve it on my own first. So I googled the error
+        and tried some of the solutions I found, the one npm themselves
+        recommend did not resolve the issue for me.
       </p>
-      <p>This paragraph in particular really got me thinking about how we perceive our own failures:</p>
-      <p class="quote">“Children suck at everything and fail at everything, but they try, they fail, they get back up & try again, and they learn some incredibly difficult things, like languages, without really thinking of it as growth or learning. To them it's all "play." At some point as adults "failure" becomes stigmatized, "play" becomes competitive, and we're suddenly afraid to fail, afraid to "lose," we imagine others are watching and laughing at our failures.”</p>
-      
+      <p>
+        I was able to eventually fix it, but I think next time I will just ask
+        for help. I didn't really learn why the issue was occuring in the first
+        place and probably could have fixed it and got on with my life quicker
+        if I had just asked.
+      </p>
     </main>
     <footer>
       <a href="https://github.com/sean-outhwaite"
