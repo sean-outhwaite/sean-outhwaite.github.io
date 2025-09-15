@@ -8,6 +8,7 @@ const blogs = [
   'javascript-dom',
   'neuroplasticity',
   'te-whare-tapa-wha',
+  'problem-solving',
 ]
 
 const currentBlog = window.location.href
