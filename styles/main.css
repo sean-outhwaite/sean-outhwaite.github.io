@@ -258,9 +258,6 @@ footer {
 }
 
 .collapsible-content .content-inner {
-  background: rgba(250, 224, 66, 0.2);
-  border-bottom: 1px solid rgba(250, 224, 66, 0.45);
-
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   padding: 0.5rem 1rem;
