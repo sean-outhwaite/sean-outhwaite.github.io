@@ -226,6 +226,77 @@ footer {
   padding: 5px 10px 5px 10px;
 }
 
+/* Collapsible content on index */
+#collapsible {
+  display: none;
+}
+.collapse-section {
+  position: relative;
+}
+.lbl-toggle {
+  position: absolute;
+  top: -4rem;
+  padding: 1rem;
+  margin: 1rem;
+
+  color: #ffffff;
+  background: #027db6b3;
+
+  cursor: pointer;
+
+  border-radius: 7px;
+  transition: all 0.25s ease-out;
+
+  width: 80%;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19);
+  opacity: 0.7;
+}
+
+.lbl-toggle:hover {
+  color: rgb(0, 0, 0);
+  background: #027db6b3;
+  opacity: 1;
+}
+.lbl-toggle::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid currentColor;
+
+  vertical-align: middle;
+  margin-right: 0.7rem;
+  transform: translateY(-2px);
+
+  transition: transform 0.2s ease-out;
+}
+
+.collapsible-content .content-inner {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: 0.5rem 1rem;
+}
+
+.collapsible-content {
+  max-height: 0rem;
+  overflow: hidden;
+
+  transition: max-height 0.25s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle {
+  position: static;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: inherit;
+}
+
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
 /* Handling different screen sizes */
 @media (max-width: 800px) {
   html {
