@@ -237,7 +237,7 @@ footer {
 }
 .lbl-toggle {
   position: absolute;
-  top: -4rem;
+  /* top: 6rem; */
   padding: 1rem;
   margin: 1rem;
 
@@ -281,9 +281,9 @@ footer {
 }
 
 .collapsible-content {
-  max-height: 0rem;
+  max-height: 7rem;
   overflow: hidden;
-
+  display: block;
   transition: max-height 0.25s ease-in-out;
 }
 
