@@ -230,17 +230,32 @@ footer {
 #collapsible {
   display: none;
 }
+.collapse-section {
+  position: relative;
+}
 .lbl-toggle {
-  display: block;
+  position: absolute;
+  top: -4rem;
   padding: 1rem;
+  margin: 1rem;
 
-  color: #a77b0e;
-  background: #fae042;
+  color: #ffffff;
+  background: #027db6b3;
 
   cursor: pointer;
 
   border-radius: 7px;
   transition: all 0.25s ease-out;
+
+  width: 80%;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.19);
+  opacity: 0.7;
+}
+
+.lbl-toggle:hover {
+  color: rgb(0, 0, 0);
+  background: #027db6b3;
+  opacity: 1;
 }
 .lbl-toggle::before {
   content: ' ';
@@ -264,24 +279,24 @@ footer {
 }
 
 .collapsible-content {
-  max-height: 0px;
+  max-height: 0rem;
   overflow: hidden;
 
   transition: max-height 0.25s ease-in-out;
 }
 
+.toggle:checked + .lbl-toggle {
+  position: static;
+}
+
 .toggle:checked + .lbl-toggle + .collapsible-content {
-  max-height: 100vh;
+  max-height: inherit;
 }
 
 .toggle:checked + .lbl-toggle::before {
   transform: rotate(90deg) translateX(-3px);
 }
 
-.toggle:checked + .lbl-toggle {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
 /* Handling different screen sizes */
 @media (max-width: 800px) {
   html {
