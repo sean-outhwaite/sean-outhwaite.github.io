@@ -120,6 +120,8 @@ footer {
 /* Home button keeps inherting underline, unsure why the next & prev buttons aren't doing this */
 #homeAnchor {
   text-decoration: none;
+  display: block;
+  width: fit-content;
 }
 
 /* Misc Selectors */
