@@ -114,3 +114,7 @@ circle {
 .swan-water {
   animation: recede 4s linear alternate infinite;
 }
+
+.hidden {
+  display: none;
+}
