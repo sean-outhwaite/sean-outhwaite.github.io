@@ -24,13 +24,6 @@ function honk() {
 
 document.querySelector('.swan').addEventListener('mousedown', honk)
 
-// document.addEventListener('mouseup', function () {
-//   if ()
-//   for (let i = 0; i < beaks.length; i++) {
-//       beaks[i].classList.toggle('hidden')
-//     }
-//   })
-
 window.addEventListener('mouseup', function () {
   beaks[0].classList.remove('hidden')
   beaks[1].classList.add('hidden')
