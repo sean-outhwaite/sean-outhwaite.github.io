@@ -2,9 +2,10 @@
 import * as Tone from 'https://esm.run/tone'
 
 const honkNoise = new Tone.Oscillator({
-  type: 'square',
-  frequency: 150,
-  volume: -16,
+  type: 'sawtooth',
+  frequency: 100,
+  detune: 200,
+  volume: -20,
 }).toDestination()
 
 document.getElementById('collapsible').addEventListener('click', function () {
@@ -12,9 +13,10 @@ document.getElementById('collapsible').addEventListener('click', function () {
     .querySelector('.collapse-section')
     .scrollIntoView({ behavior: 'smooth' })
 })
-honkNoise.start()
+
 let beaks = document.querySelectorAll('.honk')
 function honk() {
+  honkNoise.start()
   for (let i = 0; i < beaks.length; i++) {
     beaks[i].classList.toggle('hidden')
   }
