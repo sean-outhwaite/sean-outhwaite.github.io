@@ -1,5 +1,17 @@
 'use strict'
 import * as Tone from 'https://esm.run/tone'
+// Todo abstract this list somewhere else as it's used in both JS files
+const blogs = [
+  'te-houtaewa-template',
+  'html-css',
+  'identity-values',
+  'learning-plan',
+  'emotional-intelligence',
+  'javascript-dom',
+  'neuroplasticity',
+  'te-whare-tapa-wha',
+  'problem-solving',
+]
 
 const honkNoise = new Tone.Oscillator({
   type: 'sawtooth',
@@ -30,3 +42,9 @@ window.addEventListener('mouseup', function () {
   beaks[2].classList.add('hidden')
   honkNoise.stop()
 })
+
+function getRandomBlog() {
+  let blog = blogs[Math.floor(Math.random() * blogs.length)]
+  document.querySelector('.random').href = `/blog/${blog}.html`
+}
+getRandomBlog()
