@@ -28,143 +28,75 @@
       <h2>Foundations Reflections</h2>
       <h3>23 September 2025</h3>
 
-      <h4>Simple Plan</h4>
+      <h4>Learning about me</h4>
       <p>
-        While going through my work at Dev Academy, I came across a task to
-        delete a particular piece of information from an object.
+        Working through the human skills side of foundations has required a lot
+        of introspection and along the way I've discovered a few things about
+        myself.
       </p>
       <p>
-        Kind of like, deleting a phone number from your contacts list. Sounds
-        easy right? They even told me to use the in built delete functionality
-        in JavaScript!
+        I’ve learnt that I do tend to have a growth mindset (without realising
+        it), I am naturally curious about challenges and look for ways to
+        overcome them rather than giving up.
       </p>
       <p>
-        The problem was, I had never used this functionality before and wasn't
-        exactly sure how to do it. So I googled "js object methods" and scrolled
-        through the list on the MDN site (the bible of JS documentation). But
-        there was no delete method listed there 😱
-      </p>
-      <figure>
-        <img src="/images/deleteObject.png" />
-        <figcaption>Delete where are youuuuu</figcaption>
-      </figure>
-      <p>
-        My first clue should have been that they had specifically said delete
-        "operator" and not method. So I refined my query and searched for "js
-        object delete", and to my relief the second result was a guide on how to
-        use the delete operator with objects.
+        That I can be quite closed minded about things that don’t necessarily
+        interest me. Going through the human skills content has taught me be
+        more open minded as I may find something more interesting than expected.
       </p>
       <p>
-        I know I could have just googled "how to delete a property from an
-        object in js" or even asked AI, but I didn't just want to be told the
-        answer, I wanted to learn how to do it myself by learning how the
-        operator works.
+        That I need to be easier on myself. I'm often harder on myself than I
+        would be with others, I need to give myself more slack and take pride in
+        my progress.
       </p>
-
-      <h4>Flip it & Reverse it</h4>
+      <h4>Human Skills and Coding</h4>
       <p>
-        One task that I had some trouble with initially was taking some text and
-        returning it in reverse, e.g. "word" should become "drow".
-      </p>
-      <p>
-        I knew that strings (text) didn't have built in functionality to do
-        something like this, but arrays did. So I wrote down the steps that I
-        would need to do to complete this, using pseudocode to plan my approach.
-      </p>
-      <figure>
-        <img src="/images/pseudo.png" />
-        <figcaption>Pseudocode in action</figcaption>
-      </figure>
-      <p>
-        I then went through and implemented each of the steps, managing to do it
-        all on one line, feeling pretty proud I hit the test button and... ❌
-        the test failed.
+        For the most part, these things are the same no matter what job you are
+        doing. You will always be interacting with or doing something for other
+        people. Co-operating with others is an important part of being a human,
+        and if you want to succeed (both as a human and professionally) you need
+        to be able to understand and respond to your feelings and those of the
+        people around you.
       </p>
       <p>
-        I was sure I had done the right things, so I double checked and looked
-        up each of the methods I was using to make sure that they did what I
-        thought they did. Everything looked good, so why was it failing??
-      </p>
-      <p>
-        My next step was to start logging values to the console, basically
-        telling the program " show me what the word looks like at this point in
-        the code". The solution I had written was all one line though, so I
-        first had to break it down into multiple seperate steps.
-      </p>
-      <p>
-        I started by logging the value after attempting to reverse my new array.
-        It just showed me an array with a single value, which was the original
-        word. Ok, so something is wrong earlier in the process.
-      </p>
-      <p>
-        I then logged the result of the very first step - splitting the string
-        into an array. Sure enough, it spat out the same result as the previous
-        log. So I knew something was wrong with this code, I read over it again
-        and saw my mistake.
-      </p>
-      <p>
-        Groaning as it was such a minor error - when you try to split up a
-        string, you have to tell it where you want it to split it up e.g. at
-        every space. I didn't include this information, and so by default it
-        will just give you an array with the whole string as a single value.
+        Values specifically can play a huge role in programming. The things you
+        build are defined by your values, do you want to build things that
+        accessible for different kinds of people, do you want to build something
+        malicious or insecure? Your values are important and will potentially
+        impact thousands of people.
       </p>
 
+      <h4>Surprise Surprise</h4>
       <p>
-        It was frustrating that I'd spent all of this time troubleshooting such
-        a simple issue, but it was so satisfying to find the bug and fix it. I
-        learnt a few things in this process; that I should pay more attention
-        when reading my own code as the first step and that when logging values
-        to the console, I should really just start from the top and not assume
-        that what I've done earlier is working fine.
+        At the beginning of foundations I was wary about spending so much time
+        learning about these things and was more interested in focussing on the
+        tech side. As I’ve gone through it I'm surprised at how I’ve found the
+        human skills more interesting and have learnt more than I expected to.
       </p>
+
+      <h4>Challenges</h4>
       <p>
-        Ultimately though, I am really happy with how the solution turned out.
-        Getting the functionality all on one line was satisfying and looks very
-        clean.
+        The self reflection and writing about each facet. Writing the technical
+        blogs comes very easily to me, as these things are usually pretty
+        straightforward (x does y), but the human skills blogs are a bit more
+        abstract and require a lot of thinking and introspection to produce the
+        content.
       </p>
-      <figure>
-        <img src="/images/jumble.png" />
-        <figcaption>So beautiful</figcaption>
-      </figure>
-      <h4>Mirror Mirror</h4>
+
+      <h4>Why does DA do human skills</h4>
       <p>
-        After going through this sprint's Kata as well as last sprint's JS
-        challenges, I feel pretty confident in using problem-solving techniques.
+        Dev Academy doesn’t want to just produce code robots. It’s all well and
+        good if you’re a JavaScript master, but if you’re unable to productively
+        work with others you’ll struggle to use those skills effectively in a
+        team environment.
       </p>
+      <h4>Was it a waste of trime?</h4>
       <p>
-        I have frequently been using pseudocode to start building a solution,
-        talking it out to myself as I ago. When I encounter issues I'm able to
-        read error messages or log values to the console to find where something
-        is breaking.
-      </p>
-      <p>
-        Searching for information online is something I do frequently both in my
-        personal life and as part of the various jobs I've held in the past.
-        Having grown up on the internet, my Google-fu is well honed.
-      </p>
-      <img src="/images/neo.gif" />
-      <h4>🛟 SOS 🛟</h4>
-      <p>
-        If there is something I haven't been able to find the answer for, or
-        have found conflicting answers - I've raised those for discussion in our
-        stand ups for input from my peers & facilitator.
-      </p>
-      <p>
-        However, I encountered an issue getting started on this sprint's kata
-        exercises, where when trying to run npm install in the repo I received
-        an error.
-      </p>
-      <p>
-        I know the help desk is there to support me with this kind of thing, but
-        I did want to try and solve it on my own first. So I googled the error
-        and tried some of the solutions I found, the one npm themselves
-        recommend did not resolve the issue for me.
-      </p>
-      <p>
-        I was able to eventually fix it, but I think next time I will just ask
-        for help. I didn't really learn why the issue was occuring in the first
-        place and probably could have fixed it and got on with my life quicker
-        if I had just asked.
+        No, it doesn’t feel like a waste of time. I’ve been working in tech for
+        over 10 years and was still able to pick up some new things from the
+        foundations content. Even if you weren’t to continue working as a
+        programmer, the skills and concepts we’ve covered are just as applicable
+        in any industry as well as in your personal life.
       </p>
     </main>
     <footer>
