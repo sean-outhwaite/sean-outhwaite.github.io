@@ -11,6 +11,7 @@ const blogs = [
   'neuroplasticity',
   'te-whare-tapa-wha',
   'problem-solving',
+  'foundations-reflections',
 ]
 
 const honkNoise = new Tone.Oscillator({

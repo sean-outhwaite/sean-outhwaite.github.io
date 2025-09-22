@@ -9,6 +9,7 @@ const blogs = [
   'neuroplasticity',
   'te-whare-tapa-wha',
   'problem-solving',
+  'foundations-reflections',
 ]
 
 const currentBlog = window.location.href
