@@ -91,6 +91,14 @@ function honk() {
 }
 
 document.querySelector('.swan').addEventListener('mousedown', honk)
+document.querySelector('.swan').addEventListener('touchstart', honk)
+
+window.addEventListener('touchend', function () {
+  beaks[0].classList.remove('hidden')
+  beaks[1].classList.add('hidden')
+  beaks[2].classList.add('hidden')
+  honkNoise.stop()
+})
 
 window.addEventListener('mouseup', function () {
   beaks[0].classList.remove('hidden')
