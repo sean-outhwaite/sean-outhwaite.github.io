@@ -2,55 +2,6 @@
 import * as Tone from 'https://esm.run/tone'
 // Todo abstract this list somewhere else as it's used in both JS files
 const blogs = [
-  'te-houtaewa-template',
-  'html-css',
-  'identity-values',
-  'learning-plan',
-  'emotional-intelligence',
-  'javascript-dom',
-  'neuroplasticity',
-  'te-whare-tapa-wha',
-  'problem-solving',
-  'foundations-reflections',
-]
-
-const honkNoise = new Tone.Oscillator({
-  type: 'sawtooth',
-  frequency: 100,
-  detune: 200,
-  volume: -20,
-}).toDestination()
-
-document.getElementById('collapsible').addEventListener('click', function () {
-  document
-    .querySelector('.collapse-section')
-    .scrollIntoView({ behavior: 'smooth' })
-})
-
-let beaks = document.querySelectorAll('.honk')
-function honk() {
-  honkNoise.start()
-  for (let i = 0; i < beaks.length; i++) {
-    beaks[i].classList.toggle('hidden')
-  }
-}
-
-document.querySelector('.swan').addEventListener('mousedown', honk)
-
-window.addEventListener('mouseup', function () {
-  beaks[0].classList.remove('hidden')
-  beaks[1].classList.add('hidden')
-  beaks[2].classList.add('hidden')
-  honkNoise.stop()
-})
-
-function getRandomBlog() {
-  let blog = blogs[Math.floor(Math.random() * blogs.length)]
-  document.querySelector('.random').href = `/blog/${blog}.html`
-}
-getRandomBlog()
-
-let blogObj = [
   {
     title: 'Foundations Reflections',
     date: '23 Sep 2025',
@@ -118,24 +69,49 @@ let blogObj = [
   },
 ]
 
-{
-  /* <a class="blog-link" href=`blog/${this.link}`>
-          <div class="flex-container-vertical blog-preview">
-            <img src=`/images/${this.img}` />
-            <h4>this.title</h4>
-            <h5>this.date</h5>
-            <p>this.blurb</p>
-          </div>
-        </a> */
+const honkNoise = new Tone.Oscillator({
+  type: 'sawtooth',
+  frequency: 100,
+  detune: 200,
+  volume: -20,
+}).toDestination()
+
+document.getElementById('collapsible').addEventListener('click', function () {
+  document
+    .querySelector('.collapse-section')
+    .scrollIntoView({ behavior: 'smooth' })
+})
+
+let beaks = document.querySelectorAll('.honk')
+function honk() {
+  honkNoise.start()
+  for (let i = 0; i < beaks.length; i++) {
+    beaks[i].classList.toggle('hidden')
+  }
 }
+
+document.querySelector('.swan').addEventListener('mousedown', honk)
+
+window.addEventListener('mouseup', function () {
+  beaks[0].classList.remove('hidden')
+  beaks[1].classList.add('hidden')
+  beaks[2].classList.add('hidden')
+  honkNoise.stop()
+})
+
+function getRandomBlog() {
+  let blog = blogs[Math.floor(Math.random() * blogs.length)].link
+  document.querySelector('.random').href = `/blog/${blog}.html`
+}
+getRandomBlog()
 
 function generateBlogPreviews() {
   const top = document.getElementById('aboveFold')
-  let aboveFold = blogObj.slice(0, 4)
+  let aboveFold = blogs.slice(0, 4)
   aboveFold.forEach((blog) => previewConstruct(blog, top))
 
   const bottom = document.getElementById('belowFold')
-  let belowFold = blogObj.slice(4)
+  let belowFold = blogs.slice(4)
   belowFold.forEach((blog) => previewConstruct(blog, bottom))
 }
 
@@ -144,20 +120,17 @@ function previewConstruct(blog, location) {
   let div = link.appendChild(document.createElement('div'))
 
   if (blog.img) {
-    let img = div.appendChild(document.createElement('img'))
-    img.setAttribute('src', `/images/${blog.img}`)
+    div
+      .appendChild(document.createElement('img'))
+      .setAttribute('src', `/images/${blog.img}`)
   }
 
-  let h4 = div.appendChild(document.createElement('h4'))
-  let h5 = div.appendChild(document.createElement('h5'))
-  let p = div.appendChild(document.createElement('p'))
+  div.appendChild(document.createElement('h4')).textContent = blog.title
+  div.appendChild(document.createElement('h5')).textContent = blog.date
+  div.appendChild(document.createElement('p')).textContent = blog.blurb
 
   link.setAttribute('href', `blog/${blog.link}.html`)
   link.classList.add('blog-link')
   div.classList.add('flex-container-vertical', 'blog-preview')
-
-  h4.textContent = blog.title
-  h5.textContent = blog.date
-  p.textContent = blog.blurb
 }
 generateBlogPreviews()
