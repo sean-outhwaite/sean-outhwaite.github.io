@@ -117,6 +117,12 @@ footer {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#previous,
+#next {
+  width: fit-content;
+  height: fit-content;
+}
+
 /* Home button keeps inherting underline, unsure why the next & prev buttons aren't doing this */
 #homeAnchor {
   text-decoration: none;
