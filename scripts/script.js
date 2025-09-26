@@ -12,6 +12,7 @@ const blogIndex = blogs.findIndex((e) => {
   )
 })
 
+// Add links to next & prev buttons
 const nextBlog = function () {
   if (blogIndex !== 0) {
     document.querySelector('#next').href = `${blogs[blogIndex - 1].link}.html`

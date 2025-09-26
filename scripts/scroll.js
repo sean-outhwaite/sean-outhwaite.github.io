@@ -1,20 +1,14 @@
 'use strict'
 import * as Tone from 'https://esm.run/tone'
 import { blogs } from './blogs.js'
-// Todo abstract this list somewhere else as it's used in both JS files
 
+// Play noise and animate swan beak when holding the mouse button down on the swan
 const honkNoise = new Tone.Oscillator({
   type: 'sawtooth',
   frequency: 100,
   detune: 200,
   volume: -20,
 }).toDestination()
-
-document.getElementById('collapsible').addEventListener('click', function () {
-  document
-    .querySelector('.collapse-section')
-    .scrollIntoView({ behavior: 'smooth' })
-})
 
 let beaks = document.querySelectorAll('.honk')
 function honk() {
@@ -41,11 +35,21 @@ window.addEventListener('mouseup', function () {
   honkNoise.stop()
 })
 
+// Create link for the Random button
 function getRandomBlog() {
   let blog = blogs[Math.floor(Math.random() * blogs.length)].link
   document.querySelector('.random').href = `/blog/${blog}.html`
 }
 getRandomBlog()
+
+// Event listener and scroll behaviour for the "View more" banner
+document.getElementById('collapsible').addEventListener('click', function () {
+  document
+    .querySelector('.collapse-section')
+    .scrollIntoView({ behavior: 'smooth' })
+})
+
+// Fill the areas above and below "View more" with blog previews
 
 function generateBlogPreviews() {
   const top = document.getElementById('aboveFold')
@@ -57,6 +61,7 @@ function generateBlogPreviews() {
   belowFold.forEach((blog) => previewConstruct(blog, bottom))
 }
 
+// Create the HTML for the blog preview cards
 function previewConstruct(blog, location) {
   let link = location.appendChild(document.createElement('a'))
   let div = link.appendChild(document.createElement('div'))
