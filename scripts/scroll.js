@@ -49,3 +49,111 @@ function getRandomBlog() {
   document.querySelector('.random').href = `/blog/${blog}.html`
 }
 getRandomBlog()
+
+let blogObj = [
+  {
+    title: 'Foundations Reflections',
+    date: '23 Sep 2025',
+    blurb: 'Reflections',
+    link: 'foundations-reflections',
+  },
+  {
+    title: 'No Problem.',
+    date: '16 Sep 2025',
+    blurb: 'Adventures in Slaying Dragons & Squashing Bugs.',
+    link: 'problem-solving',
+    img: 'jumble.png',
+  },
+  {
+    title: 'Te Whare Tapa Whā.',
+    date: '15 Sep 2025',
+    blurb: 'My wellbeing plan.',
+    link: 'te-whare-tapa-wha',
+    img: 'te-whare-tapa-wha.png',
+  },
+  {
+    title: 'Mind, Set, Match',
+    date: '15 Sep 2025',
+    blurb: 'Neuroplasticity and Growth Mindset musings.',
+    link: 'neuroplasticity',
+  },
+  {
+    title: 'JavaScripting',
+    date: '10 Sep 2025',
+    blurb: 'An introduction to fundamental JavaScript concepts.',
+    link: 'javascript-dom',
+    img: 'functionExample.png',
+  },
+  {
+    title: 'Emotional Intelligence',
+    date: '08 Sep 2025',
+    blurb: 'What is EQ and how does it differ to IQ?',
+    link: 'emotional-intelligence',
+  },
+  {
+    title: 'Learning Plan',
+    date: '03 Sep 2025',
+    blurb: 'My plan for success at Dev Academy',
+    link: 'learning-plan',
+  },
+  {
+    title: 'Identity & Values',
+    date: '03 Sep 2025',
+    blurb: 'A bit about me.',
+    link: 'identity-values',
+    img: 'snow.jpg',
+  },
+  {
+    title: 'CSS Positioning',
+    date: '03 Sep 2025',
+    blurb: 'Learn about the CSS position property.',
+    link: 'html-css',
+    img: 'absolute.png',
+  },
+  {
+    title: 'Stories & Legends',
+    date: '03 Sep 2025',
+    blurb: 'The Story of Te Houtaewa.',
+    link: 'te-houtaewa-template',
+  },
+]
+
+{
+  /* <a class="blog-link" href=`blog/${this.link}`>
+          <div class="flex-container-vertical blog-preview">
+            <img src=`/images/${this.img}` />
+            <h4>this.title</h4>
+            <h5>this.date</h5>
+            <p>this.blurb</p>
+          </div>
+        </a> */
+}
+
+function generateBlogPreviews() {
+  let aboveFold = blogObj.slice(0, 4)
+  aboveFold.forEach((thing) => previewConstruct(thing))
+}
+
+function previewConstruct(thing) {
+  const top = document.getElementById('aboveFold')
+  let link = top.appendChild(document.createElement('a'))
+  let div = link.appendChild(document.createElement('div'))
+
+  if (thing.img) {
+    let img = div.appendChild(document.createElement('img'))
+    img.setAttribute('src', `/images/${thing.img}`)
+  }
+
+  let h4 = div.appendChild(document.createElement('h4'))
+  let h5 = div.appendChild(document.createElement('h5'))
+  let p = div.appendChild(document.createElement('p'))
+
+  link.setAttribute('href', `blog/${thing.link}.html`)
+  link.classList.add('blog-link')
+  div.classList.add('flex-container-vertical', 'blog-preview')
+
+  h4.textContent = thing.title
+  h5.textContent = thing.date
+  p.textContent = thing.blurb
+}
+generateBlogPreviews()
