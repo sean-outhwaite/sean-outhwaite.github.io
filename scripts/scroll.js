@@ -130,30 +130,34 @@ let blogObj = [
 }
 
 function generateBlogPreviews() {
+  const top = document.getElementById('aboveFold')
   let aboveFold = blogObj.slice(0, 4)
-  aboveFold.forEach((thing) => previewConstruct(thing))
+  aboveFold.forEach((blog) => previewConstruct(blog, top))
+
+  const bottom = document.getElementById('belowFold')
+  let belowFold = blogObj.slice(4)
+  belowFold.forEach((blog) => previewConstruct(blog, bottom))
 }
 
-function previewConstruct(thing) {
-  const top = document.getElementById('aboveFold')
-  let link = top.appendChild(document.createElement('a'))
+function previewConstruct(blog, location) {
+  let link = location.appendChild(document.createElement('a'))
   let div = link.appendChild(document.createElement('div'))
 
-  if (thing.img) {
+  if (blog.img) {
     let img = div.appendChild(document.createElement('img'))
-    img.setAttribute('src', `/images/${thing.img}`)
+    img.setAttribute('src', `/images/${blog.img}`)
   }
 
   let h4 = div.appendChild(document.createElement('h4'))
   let h5 = div.appendChild(document.createElement('h5'))
   let p = div.appendChild(document.createElement('p'))
 
-  link.setAttribute('href', `blog/${thing.link}.html`)
+  link.setAttribute('href', `blog/${blog.link}.html`)
   link.classList.add('blog-link')
   div.classList.add('flex-container-vertical', 'blog-preview')
 
-  h4.textContent = thing.title
-  h5.textContent = thing.date
-  p.textContent = thing.blurb
+  h4.textContent = blog.title
+  h5.textContent = blog.date
+  p.textContent = blog.blurb
 }
 generateBlogPreviews()
