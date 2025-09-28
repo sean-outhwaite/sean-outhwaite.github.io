@@ -317,6 +317,20 @@ footer {
   transform: rotate(90deg) translateX(-3px);
 }
 
+/* Blog generator specific */
+.preview {
+  border: solid rgb(127, 127, 127);
+  width: 100%;
+}
+
+.genInput {
+  padding: 0.2rem;
+}
+
+.hidden {
+  display: none;
+}
+
 /* Handling different screen sizes */
 @media (max-width: 800px) {
   html {

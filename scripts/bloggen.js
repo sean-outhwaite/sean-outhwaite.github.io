@@ -1,5 +1,5 @@
 'use strict'
-
+// Todo: allow editing elements after adding, improve styling, DRY, always put main sub and date at the top
 const content = document.querySelector('.content')
 const preview = document.querySelector('.preview')
 
@@ -12,6 +12,7 @@ function addParagraph() {
   preview.innerHTML += `
   <p>${paragraph.value}</p>`
   paragraph.value = ''
+  preview.classList.remove('hidden')
 }
 
 document.getElementById('headAdd').addEventListener('click', addHeading)
@@ -26,11 +27,12 @@ function addHeading() {
     </div>`
   preview.innerHTML += `
     <div class="flex-container-nav">
-      <a id="previous"> <button id="prevBtn" class="nav">Previous</button></a>
+      <a id="previous"> <button id="prevBtn" class="nav disabledButton">Previous</button></a>
       <h1>${heading.value}</h1>
-      <a id="next"><button id="nextBtn" class="nav">Next</button></a>
+      <a id="next"><button id="nextBtn" class="nav disabledButton">Next</button></a>
     </div>`
   heading.value = ''
+  preview.classList.remove('hidden')
 }
 
 document.getElementById('subAdd').addEventListener('click', addSubheading)
@@ -42,6 +44,7 @@ function addSubheading() {
   preview.innerHTML += `
   <h2>${subHeading.value}</h2>`
   subHeading.value = ''
+  preview.classList.remove('hidden')
 }
 
 document.getElementById('secAdd').addEventListener('click', addSecheading)
@@ -53,6 +56,7 @@ function addSecheading() {
   preview.innerHTML += `
   <h4>${secHeading.value}</h4>`
   secHeading.value = ''
+  preview.classList.remove('hidden')
 }
 
 document.getElementById('dateAdd').addEventListener('click', addDate)
@@ -64,4 +68,5 @@ function addDate() {
   preview.innerHTML += `
   <h3>${date.value}</h3>`
   date.value = ''
+  preview.classList.remove('hidden')
 }
