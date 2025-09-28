@@ -24,8 +24,12 @@
           ><button id="nextBtn" class="nav disabledButton">Next</button></a
         >
       </div>
-      <div class="preview hidden"></div>
-      <div class="content" style="white-space: pre-wrap"></div>
+      <div class="preview hidden">
+        <span class="topPreview"></span>
+      </div>
+      <div class="content" style="white-space: pre-wrap">
+        <span class="topContent"></span>
+      </div>
       <div class="generator">
         <div class="genInput">
           <label for="heading">Main heading: </label>
@@ -53,7 +57,7 @@
 
         <div class="genInput">
           <label for="paragraph">Enter paragraph: </label>
-          <input type="text" id="paragraph" name="paragraph" />
+          <textarea type="text" id="paragraph" name="paragraph"></textarea>
           <button id="pAdd">Add</button>
         </div>
       </div>

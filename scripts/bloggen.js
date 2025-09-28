@@ -2,48 +2,50 @@
 // Todo: allow editing elements after adding, improve styling, DRY, always put main sub and date at the top
 const content = document.querySelector('.content')
 const preview = document.querySelector('.preview')
-
-document.getElementById('pAdd').addEventListener('click', addParagraph)
-
-function addParagraph() {
-  let paragraph = document.getElementById('paragraph')
-  content.textContent += `
-  <p>${paragraph.value}</p>`
-  preview.innerHTML += `
-  <p>${paragraph.value}</p>`
-  paragraph.value = ''
-  preview.classList.remove('hidden')
+let blog = {
+  title: '',
+  subHead: '',
+  blogDate: '',
 }
 
 document.getElementById('headAdd').addEventListener('click', addHeading)
 
 function addHeading() {
   let heading = document.getElementById('heading')
-  document.querySelector('.content').textContent += `
+  blog.title = `
     <div class="flex-container-nav">
       <a id="previous"> <button id="prevBtn" class="nav">Previous</button></a>
       <h1>${heading.value}</h1>
       <a id="next"><button id="nextBtn" class="nav">Next</button></a>
     </div>`
-  preview.innerHTML += `
-    <div class="flex-container-nav">
-      <a id="previous"> <button id="prevBtn" class="nav disabledButton">Previous</button></a>
-      <h1>${heading.value}</h1>
-      <a id="next"><button id="nextBtn" class="nav disabledButton">Next</button></a>
-    </div>`
   heading.value = ''
-  preview.classList.remove('hidden')
+  generateTop()
 }
 
 document.getElementById('subAdd').addEventListener('click', addSubheading)
 
 function addSubheading() {
   let subHeading = document.getElementById('subHeading')
-  content.textContent += `
-  <h2>${subHeading.value}</h2>`
-  preview.innerHTML += `
+  blog.subHead = `
   <h2>${subHeading.value}</h2>`
   subHeading.value = ''
+  generateTop()
+}
+
+document.getElementById('dateAdd').addEventListener('click', addDate)
+
+function addDate() {
+  let date = document.getElementById('date')
+  blog.blogDate += `
+  <h3>${date.value}</h3>`
+  date.value = ''
+  generateTop()
+}
+
+function generateTop() {
+  let top = blog.title + blog.subHead + blog.blogDate
+  document.querySelector('.topContent').textContent = top
+  document.querySelector('.topPreview').innerHTML = top
   preview.classList.remove('hidden')
 }
 
@@ -59,14 +61,14 @@ function addSecheading() {
   preview.classList.remove('hidden')
 }
 
-document.getElementById('dateAdd').addEventListener('click', addDate)
+document.getElementById('pAdd').addEventListener('click', addParagraph)
 
-function addDate() {
-  let date = document.getElementById('date')
+function addParagraph() {
+  let paragraph = document.getElementById('paragraph')
   content.textContent += `
-  <h3>${date.value}</h3>`
+  <p>${paragraph.value}</p>`
   preview.innerHTML += `
-  <h3>${date.value}</h3>`
-  date.value = ''
+  <p>${paragraph.value}</p>`
+  paragraph.value = ''
   preview.classList.remove('hidden')
 }
