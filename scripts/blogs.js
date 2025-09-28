@@ -1,5 +1,11 @@
 export const blogs = [
   {
+    title: 'Generation Blog',
+    date: '29 Sep 2025',
+    blurb: 'How to turn your laziness into productivity',
+    link: 'generation-blog',
+  },
+  {
     title: 'Foundations Reflections',
     date: '23 Sep 2025',
     blurb: 'Reflections',
