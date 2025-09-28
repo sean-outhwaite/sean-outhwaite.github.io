@@ -1,7 +1,13 @@
 'use strict'
-// Todo: allow editing elements after adding, improve styling, DRY, always put main sub and date at the top
-const content = document.querySelector('.bottomContent')
+// Todo: allow editing paragraphs and sections after adding, improve styling, DRY
+
+// Could store headings and paragraphs in the object, allow clicking on the content to enable editing
+// Generate the bottom content the same way as the top content
+
+const bottomContent = document.querySelector('.bottomContent')
+const bottomPreview = document.querySelector('.bottomPreview')
 const preview = document.querySelector('.preview')
+
 let blog = {
   title: '',
   subHead: '',
@@ -53,9 +59,9 @@ document.getElementById('secAdd').addEventListener('click', addSecheading)
 
 function addSecheading() {
   let secHeading = document.getElementById('secHeading')
-  content.textContent += `
+  bottomContent.textContent += `
   <h4>${secHeading.value}</h4>`
-  document.querySelector('.bottomPreview').innerHTML += `
+  bottomPreview.innerHTML += `
   <h4>${secHeading.value}</h4>`
   secHeading.value = ''
   preview.classList.remove('hidden')
@@ -65,11 +71,9 @@ document.getElementById('pAdd').addEventListener('click', addParagraph)
 
 function addParagraph() {
   let paragraph = document.getElementById('paragraph')
-  content.textContent += `
+  bottomContent.textContent += `
   <p>${paragraph.value}</p>`
-  document.querySelector(
-    '.bottomPreview'
-  ).innerHTML += `<p>${paragraph.value}</p>
+  bottomPreview.innerHTML += `<p>${paragraph.value}</p>
   `
   paragraph.value = ''
   preview.classList.remove('hidden')
