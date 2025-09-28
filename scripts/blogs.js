@@ -4,6 +4,7 @@ export const blogs = [
     date: '29 Sep 2025',
     blurb: 'How to turn your laziness into productivity',
     link: 'generation-blog',
+    img: 'bloggen.png',
   },
   {
     title: 'Foundations Reflections',
