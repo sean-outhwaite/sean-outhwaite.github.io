@@ -1,6 +1,6 @@
 'use strict'
 // Todo: allow editing elements after adding, improve styling, DRY, always put main sub and date at the top
-const content = document.querySelector('.content')
+const content = document.querySelector('.bottomContent')
 const preview = document.querySelector('.preview')
 let blog = {
   title: '',
@@ -55,7 +55,7 @@ function addSecheading() {
   let secHeading = document.getElementById('secHeading')
   content.textContent += `
   <h4>${secHeading.value}</h4>`
-  preview.innerHTML += `
+  document.querySelector('.bottomPreview').innerHTML += `
   <h4>${secHeading.value}</h4>`
   secHeading.value = ''
   preview.classList.remove('hidden')
@@ -67,8 +67,10 @@ function addParagraph() {
   let paragraph = document.getElementById('paragraph')
   content.textContent += `
   <p>${paragraph.value}</p>`
-  preview.innerHTML += `
-  <p>${paragraph.value}</p>`
+  document.querySelector(
+    '.bottomPreview'
+  ).innerHTML += `<p>${paragraph.value}</p>
+  `
   paragraph.value = ''
   preview.classList.remove('hidden')
 }
