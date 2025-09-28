@@ -3,6 +3,7 @@
 
 // Could store headings and paragraphs in the object, allow clicking on the content to enable editing
 // Generate the bottom content the same way as the top content
+// Make the content element a textbox?
 
 const bottomContent = document.querySelector('.bottomContent')
 const bottomPreview = document.querySelector('.bottomPreview')
