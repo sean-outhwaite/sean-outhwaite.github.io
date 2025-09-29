@@ -1,9 +1,7 @@
 'use strict'
-// Todo: allow editing paragraphs and sections after adding, improve styling, DRY
+// Todo: improve styling
 
-// Could store headings and paragraphs in the object, allow clicking on the content to enable editing
-// Generate the bottom content the same way as the top content
-
+const topPreview = document.querySelector('.topPreview')
 const bottomPreview = document.querySelector('.bottomPreview')
 const preview = document.querySelector('.preview')
 
@@ -47,6 +45,7 @@ let blog = {
   topContent: '',
 }
 
+// Event handlers and functions for the unique elements (main heading, date, etc)
 document.getElementById('headAdd').addEventListener('click', addHeading)
 
 function addHeading() {
@@ -90,11 +89,11 @@ function addDate() {
 function generateTop() {
   let top = blog.title + blog.subHead + blog.blogDate
   blog.topContent = top
-  document.querySelector('.topPreview').innerHTML = blog.topContent
-  preview.classList.remove('hidden')
-  makeContent()
+  makePreview()
+  makeOutput()
 }
 
+// Event handlers and functions for the non unique elements (paragraphs & section headings)
 document.getElementById('secAdd').addEventListener('click', addSecheading)
 
 function addSecheading() {
@@ -102,10 +101,9 @@ function addSecheading() {
   let secContent = `
   <h4>${secHeading.value}</h4>`
   blog.innerContent += secContent
-  bottomPreview.innerHTML = blog.innerContent
   secHeading.value = ''
-  preview.classList.remove('hidden')
-  makeContent()
+  makePreview()
+  makeOutput()
 }
 
 document.getElementById('pAdd').addEventListener('click', addParagraph)
@@ -115,28 +113,36 @@ function addParagraph() {
   let pContent = `
   <p>${paragraph.value}</p>`
   blog.innerContent += pContent
-  bottomPreview.innerHTML = blog.innerContent
   paragraph.value = ''
-  preview.classList.remove('hidden')
-  makeContent()
+  makePreview()
+  makeOutput()
 }
 
-function makeContent() {
+// Build and display the preview + HTML output
+function makeOutput() {
   let content = blog.head + blog.topContent + blog.innerContent + blog.foot
   document.querySelector('.test').value = content
 }
-makeContent()
+makeOutput()
 
+function makePreview() {
+  topPreview.innerHTML = blog.topContent
+  bottomPreview.innerHTML = blog.innerContent
+  preview.classList.remove('hidden')
+}
+
+// Enables copying the output with a single click
 function copyOutput() {
   const output = document.querySelector('.test').value
   navigator.clipboard.writeText(output)
 }
 document.getElementById('copy').addEventListener('click', copyOutput)
 
+// Takes any edits made to the preview and saves them back to the content in the object, updates the output HTML
 function editPreview() {
   blog.topContent = document.querySelector('.topPreview').innerHTML
   blog.innerContent = document.querySelector('.bottomPreview').innerHTML
-  makeContent()
+  makeOutput()
 }
 
-document.querySelector('.preview').addEventListener('focusout', editPreview)
+preview.addEventListener('focusout', editPreview)
