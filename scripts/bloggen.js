@@ -56,6 +56,12 @@ function addHeading() {
       <h1>${heading.value}</h1>
       <a id="next"><button id="nextBtn" class="nav">Next</button></a>
     </div>`
+
+  blog.head = blog.head.replace(
+    /(?<=<title>)(.*?)(?=\s?<\/title>)/,
+    heading.value
+  )
+
   heading.value = ''
   generateTop()
 }
