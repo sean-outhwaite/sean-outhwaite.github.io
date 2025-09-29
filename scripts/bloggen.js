@@ -35,7 +35,8 @@ let blog = {
   title: '',
   subHead: '',
   blogDate: '',
-  foot: `</main>
+  foot: `
+  </main>
     <footer>
       <a href="https://github.com/sean-outhwaite"
         ><img class="gitLogo" src="/images/github-mark.png"
@@ -44,6 +45,7 @@ let blog = {
     <script type="module" src="/scripts/script.js"></script>
   </body>
 </html>`,
+  innerContent: '',
 }
 
 document.getElementById('headAdd').addEventListener('click', addHeading)
@@ -88,32 +90,39 @@ function addDate() {
 
 function generateTop() {
   let top = blog.title + blog.subHead + blog.blogDate
-  document.querySelector('.topContent').textContent = blog.head + top
-  document.querySelector('.footerContent').textContent = blog.foot
   document.querySelector('.topPreview').innerHTML = top
   preview.classList.remove('hidden')
+  makeContent()
 }
 
 document.getElementById('secAdd').addEventListener('click', addSecheading)
 
 function addSecheading() {
   let secHeading = document.getElementById('secHeading')
-  bottomContent.textContent += `
+  let secContent = `
   <h4>${secHeading.value}</h4>`
-  bottomPreview.innerHTML += `
-  <h4>${secHeading.value}</h4>`
+  bottomPreview.innerHTML += secContent
+  blog.innerContent += secContent
   secHeading.value = ''
   preview.classList.remove('hidden')
+  makeContent()
 }
 
 document.getElementById('pAdd').addEventListener('click', addParagraph)
 
 function addParagraph() {
   let paragraph = document.getElementById('paragraph')
-  bottomContent.textContent += `
+  let pContent = `
   <p>${paragraph.value}</p>`
-  bottomPreview.innerHTML += `<p>${paragraph.value}</p>
-  `
+  bottomPreview.innerHTML += pContent
+  blog.innerContent += pContent
   paragraph.value = ''
   preview.classList.remove('hidden')
+  makeContent()
+}
+
+function makeContent() {
+  let content =
+    blog.head + blog.title + blog.blogDate + blog.innerContent + blog.foot
+  document.querySelector('.test').value = content
 }

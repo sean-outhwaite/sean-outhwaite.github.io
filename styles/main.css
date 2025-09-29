@@ -335,6 +335,10 @@ footer {
   display: none;
 }
 
+.test {
+  width: 100%;
+}
+
 /* Handling different screen sizes */
 @media (max-width: 800px) {
   html {
