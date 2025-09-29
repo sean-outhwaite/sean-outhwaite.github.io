@@ -126,3 +126,4 @@ function makeContent() {
     blog.head + blog.title + blog.blogDate + blog.innerContent + blog.foot
   document.querySelector('.test').value = content
 }
+makeContent()

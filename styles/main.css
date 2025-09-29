@@ -336,7 +336,7 @@ footer {
 }
 
 .test {
-  width: 100%;
+  field-sizing: content;
 }
 
 /* Handling different screen sizes */
