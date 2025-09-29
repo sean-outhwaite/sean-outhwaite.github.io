@@ -74,7 +74,7 @@ document.getElementById('dateAdd').addEventListener('click', addDate)
 
 function addDate() {
   let date = document.getElementById('date')
-  blog.blogDate += `
+  blog.blogDate = `
   <h3>${date.value}</h3>`
   date.value = ''
   generateTop()
