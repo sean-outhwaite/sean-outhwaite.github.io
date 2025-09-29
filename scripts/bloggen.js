@@ -127,3 +127,9 @@ function makeContent() {
   document.querySelector('.test').value = content
 }
 makeContent()
+
+function copyOutput() {
+  const output = document.querySelector('.test').value
+  navigator.clipboard.writeText(output)
+}
+document.getElementById('copy').addEventListener('click', copyOutput)
