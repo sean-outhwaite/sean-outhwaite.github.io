@@ -1,5 +1,12 @@
 export const blogs = [
   {
+    title: 'Bloggen V1',
+    date: '30 Sep 2025',
+    blurb: "Yes, I'm accepting seed money",
+    link: 'bloggenv1',
+    img: 'bloggenfiles.png',
+  },
+  {
     title: 'Generation Blog',
     date: '29 Sep 2025',
     blurb: 'How to turn your laziness into productivity',
