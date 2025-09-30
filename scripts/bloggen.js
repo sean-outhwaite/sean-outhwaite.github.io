@@ -121,7 +121,7 @@ function addParagraph() {
 // Build and display the preview + HTML output
 function makeOutput() {
   let content = blog.head + blog.topContent + blog.innerContent + blog.foot
-  document.querySelector('.test').value = content
+  document.querySelector('.output').value = content
 }
 makeOutput()
 
@@ -133,7 +133,7 @@ function makePreview() {
 
 // Enables copying the output with a single click
 function copyOutput() {
-  const output = document.querySelector('.test').value
+  const output = document.querySelector('.output').value
   navigator.clipboard.writeText(output)
 }
 document.getElementById('copy').addEventListener('click', copyOutput)
