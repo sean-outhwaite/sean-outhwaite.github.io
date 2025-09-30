@@ -28,7 +28,7 @@
         <span class="bottomPreview"></span>
       </div>
 
-      <div class="generator">
+      <div class="generator flex-container-vertical">
         <div class="genInput">
           <label for="heading">Main heading: </label>
           <input type="text" id="heading" name="heading" />
@@ -58,10 +58,9 @@
           <textarea type="text" id="paragraph" name="paragraph"></textarea>
           <button id="pAdd">Add</button>
         </div>
-        <h4></h4>
-        <button id="copy">Copy</button>
-        <textarea disabled class="output"> </textarea>
       </div>
+      <button id="copy" class="neon">Copy HTML</button>
+      <textarea disabled class="output"> </textarea>
     </main>
     <footer>
       <a href="https://github.com/sean-outhwaite"

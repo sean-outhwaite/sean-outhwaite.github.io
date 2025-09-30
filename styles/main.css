@@ -132,13 +132,19 @@ footer {
 
 /* Misc Selectors */
 
-#random {
+.neon {
+  border-radius: 5pt;
+  padding: 10px 15px 10px 15px;
+  margin-bottom: 5px;
+  font-weight: 450;
+  cursor: pointer;
   background-color: rgb(217, 191, 239);
   color: black;
   border: solid white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
-#random:hover {
+
+.neon:hover {
   box-shadow: 0 0 16px 0 rgba(217, 191, 239, 1),
     0 0 20px 0 rgba(217, 191, 239, 1);
   color: white;
@@ -337,6 +343,40 @@ footer {
 
 .output {
   field-sizing: content;
+}
+
+.generator {
+  width: 80%;
+  padding: 1rem;
+}
+
+.genInput {
+  font-weight: 500;
+  width: 80%;
+}
+
+.genInput input {
+  border: none;
+  height: 1.5rem;
+  width: 30%;
+}
+
+.genInput textarea {
+  border: none;
+}
+
+.genInput button {
+  border-radius: 3pt;
+  background-color: #ffffff;
+  border: 1px solid #027db6b3;
+}
+
+.genInput button:hover {
+  background-color: #e4e4e4;
+}
+
+.genInput button:active {
+  background-color: #ffffff;
 }
 
 /* Handling different screen sizes */

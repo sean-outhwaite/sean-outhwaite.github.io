@@ -38,7 +38,7 @@ window.addEventListener('mouseup', function () {
 // Create link for the Random button
 function getRandomBlog() {
   let blog = blogs[Math.floor(Math.random() * blogs.length)].link
-  document.querySelector('.random').href = `/blog/${blog}.html`
+  document.querySelector('#random').href = `/blog/${blog}.html`
 }
 getRandomBlog()
 
