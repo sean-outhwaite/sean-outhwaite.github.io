@@ -1,5 +1,5 @@
 'use strict'
-// Todo: improve styling
+// Todo: format date, add styling to section button, refactor and remove all of the old form code, try and get the output to separate <p> tags
 
 const topPreview = document.querySelector('.topPreview')
 const bottomPreview = document.querySelector('.bottomPreview')
