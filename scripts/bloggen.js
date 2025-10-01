@@ -53,7 +53,7 @@ function addHeading() {
   blog.title = `
     <div class="flex-container-nav">
       <a id="previous"> <button id="prevBtn" class="nav">Previous</button></a>
-      <h1>${heading.value}</h1>
+      <h1>Blog Title</h1>
       <a id="next"><button id="nextBtn" class="nav">Next</button></a>
     </div>`
 
@@ -65,26 +65,29 @@ function addHeading() {
   heading.value = ''
   generateTop()
 }
+addHeading()
 
 document.getElementById('subAdd').addEventListener('click', addSubheading)
 
 function addSubheading() {
   let subHeading = document.getElementById('subHeading')
   blog.subHead = `
-  <h2>${subHeading.value}</h2>`
+  <h2>Subheading</h2>`
   subHeading.value = ''
   generateTop()
 }
+addSubheading()
 
 document.getElementById('dateAdd').addEventListener('click', addDate)
 
 function addDate() {
   let date = document.getElementById('date')
   blog.blogDate = `
-  <h3>${date.value}</h3>`
+  <h3>${Date()}</h3>`
   date.value = ''
   generateTop()
 }
+addDate()
 
 function generateTop() {
   let top = blog.title + blog.subHead + blog.blogDate
@@ -92,14 +95,15 @@ function generateTop() {
   makePreview()
   makeOutput()
 }
-
+generateTop()
 // Event handlers and functions for the non unique elements (paragraphs & section headings)
 document.getElementById('secAdd').addEventListener('click', addSecheading)
 
 function addSecheading() {
   let secHeading = document.getElementById('secHeading')
   let secContent = `
-  <h4>${secHeading.value}</h4>`
+  <h4>New section</h4>
+  <p>Write content here</p>`
   blog.innerContent += secContent
   secHeading.value = ''
   makePreview()
@@ -130,6 +134,7 @@ function makePreview() {
   bottomPreview.innerHTML = blog.innerContent
   preview.classList.remove('hidden')
 }
+makePreview()
 
 // Enables copying the output with a single click
 function copyOutput() {
