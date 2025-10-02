@@ -1,5 +1,5 @@
 'use strict'
-// Todo: add styling to section button, refactor and remove all of the old form code, try and get the output to separate <p> tags
+// Todo: add notification for copying html, refactor and remove all of the old form code, try and get the output to separate <p> tags
 
 const topPreview = document.querySelector('.topPreview')
 const bottomPreview = document.querySelector('.bottomPreview')
@@ -45,11 +45,8 @@ let blog = {
   topContent: '',
 }
 
-// Event handlers and functions for the unique elements (main heading, date, etc)
-document.getElementById('headAdd').addEventListener('click', addHeading)
-
-function addHeading() {
-  let heading = document.getElementById('heading')
+// Generate template content
+function addTemplate() {
   blog.title = `
     <div class="flex-container-nav">
       <a id="previous"> <button id="prevBtn" class="nav">Previous</button></a>
@@ -57,41 +54,19 @@ function addHeading() {
       <a id="next"><button id="nextBtn" class="nav">Next</button></a>
     </div>`
 
-  blog.head = blog.head.replace(
-    /(?<=<title>)(.*?)(?=\s?<\/title>)/,
-    heading.value
-  )
-
-  heading.value = ''
-  generateTop()
-}
-addHeading()
-
-document.getElementById('subAdd').addEventListener('click', addSubheading)
-
-function addSubheading() {
-  let subHeading = document.getElementById('subHeading')
   blog.subHead = `
   <h2>Subheading</h2>`
-  subHeading.value = ''
-  generateTop()
-}
-addSubheading()
 
-document.getElementById('dateAdd').addEventListener('click', addDate)
-
-function addDate() {
-  let date = document.getElementById('date')
   blog.blogDate = `
   <h3>${new Date().toLocaleDateString('en-uk', {
     day: '2-digit',
     month: 'short',
     year: 'numeric',
   })}</h3>`
-  date.value = ''
+
   generateTop()
 }
-addDate()
+addTemplate()
 
 function generateTop() {
   let top = blog.title + blog.subHead + blog.blogDate
@@ -104,24 +79,10 @@ generateTop()
 document.getElementById('secAdd').addEventListener('click', addSecheading)
 
 function addSecheading() {
-  let secHeading = document.getElementById('secHeading')
   let secContent = `
   <h4>New section</h4>
   <p>Write content here</p>`
   blog.innerContent += secContent
-  secHeading.value = ''
-  makePreview()
-  makeOutput()
-}
-
-document.getElementById('pAdd').addEventListener('click', addParagraph)
-
-function addParagraph() {
-  let paragraph = document.getElementById('paragraph')
-  let pContent = `
-  <p>${paragraph.value}</p>`
-  blog.innerContent += pContent
-  paragraph.value = ''
   makePreview()
   makeOutput()
 }
@@ -136,7 +97,6 @@ makeOutput()
 function makePreview() {
   topPreview.innerHTML = blog.topContent
   bottomPreview.innerHTML = blog.innerContent
-  preview.classList.remove('hidden')
 }
 makePreview()
 
@@ -151,6 +111,11 @@ document.getElementById('copy').addEventListener('click', copyOutput)
 function editPreview() {
   blog.topContent = document.querySelector('.topPreview').innerHTML
   blog.innerContent = document.querySelector('.bottomPreview').innerHTML
+  blog.head = blog.head.replace(
+    /(?<=<title>)(.*?)(?=\s?<\/title>)/,
+    blog.topContent.match(/(?<=<h1>)(.*?)(?=\s?<\/h1>)/g)
+  )
+
   makeOutput()
 }
 

@@ -366,17 +366,24 @@ footer {
 }
 
 .genInput button {
-  border-radius: 3pt;
-  background-color: #ffffff;
-  border: 1px solid #027db6b3;
+  border-radius: 5pt;
+  padding: 10px 15px 10px 15px;
+  margin-bottom: 5px;
+  font-weight: 450;
+  cursor: pointer;
+  background-color: #027db6b3;
+  color: rgb(255, 255, 255);
+  border: solid rgb(0, 0, 0);
 }
 
 .genInput button:hover {
-  background-color: #e4e4e4;
+  background-color: #ffffff;
+  color: black;
 }
 
 .genInput button:active {
-  background-color: #ffffff;
+  background-color: #d7d7d7;
+  color: black;
 }
 
 /* Handling different screen sizes */
