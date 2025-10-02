@@ -1,5 +1,5 @@
 'use strict'
-// Todo: format date, add styling to section button, refactor and remove all of the old form code, try and get the output to separate <p> tags
+// Todo: add styling to section button, refactor and remove all of the old form code, try and get the output to separate <p> tags
 
 const topPreview = document.querySelector('.topPreview')
 const bottomPreview = document.querySelector('.bottomPreview')
@@ -83,7 +83,11 @@ document.getElementById('dateAdd').addEventListener('click', addDate)
 function addDate() {
   let date = document.getElementById('date')
   blog.blogDate = `
-  <h3>${Date()}</h3>`
+  <h3>${new Date().toLocaleDateString('en-uk', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+  })}</h3>`
   date.value = ''
   generateTop()
 }
