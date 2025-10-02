@@ -1,5 +1,5 @@
 'use strict'
-// Todo: add notification for copying html
+
 const topPreview = document.querySelector('.topPreview')
 const bottomPreview = document.querySelector('.bottomPreview')
 const preview = document.querySelector('.preview')
@@ -89,6 +89,11 @@ makePreview()
 function copyOutput() {
   const output = document.querySelector('.output').value
   navigator.clipboard.writeText(output)
+  document.querySelector('.notif').classList.remove('hidden')
+  window.setTimeout(
+    () => document.querySelector('.notif').classList.add('hidden'),
+    1500
+  )
 }
 document.getElementById('copy').addEventListener('click', copyOutput)
 
