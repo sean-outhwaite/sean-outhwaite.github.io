@@ -1,6 +1,5 @@
 'use strict'
-// Todo: add notification for copying html, refactor and remove all of the old form code, try and get the output to separate <p> tags
-
+// Todo: add notification for copying html
 const topPreview = document.querySelector('.topPreview')
 const bottomPreview = document.querySelector('.bottomPreview')
 const preview = document.querySelector('.preview')
@@ -28,9 +27,6 @@ let blog = {
   <body>
   <a id="homeAnchor" href="../index.html"> <button id="home">Home</button></a>
     <main class="container">`,
-  title: '',
-  subHead: '',
-  blogDate: '',
   foot: `
   </main>
     <footer>
@@ -47,35 +43,24 @@ let blog = {
 
 // Generate template content
 function addTemplate() {
-  blog.title = `
+  blog.topContent = `
     <div class="flex-container-nav">
       <a id="previous"> <button id="prevBtn" class="nav">Previous</button></a>
       <h1>Blog Title</h1>
       <a id="next"><button id="nextBtn" class="nav">Next</button></a>
-    </div>`
-
-  blog.subHead = `
-  <h2>Subheading</h2>`
-
-  blog.blogDate = `
-  <h3>${new Date().toLocaleDateString('en-uk', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric',
-  })}</h3>`
-
-  generateTop()
-}
-addTemplate()
-
-function generateTop() {
-  let top = blog.title + blog.subHead + blog.blogDate
-  blog.topContent = top
+    </div>
+    <h2>Subheading</h2>
+    <h3>${new Date().toLocaleDateString('en-uk', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+    })}</h3>`
   makePreview()
   makeOutput()
 }
-generateTop()
-// Event handlers and functions for the non unique elements (paragraphs & section headings)
+addTemplate()
+
+// Event handlers and functions for adding a new section
 document.getElementById('secAdd').addEventListener('click', addSecheading)
 
 function addSecheading() {
@@ -109,8 +94,12 @@ document.getElementById('copy').addEventListener('click', copyOutput)
 
 // Takes any edits made to the preview and saves them back to the content in the object, updates the output HTML
 function editPreview() {
-  blog.topContent = document.querySelector('.topPreview').innerHTML
-  blog.innerContent = document.querySelector('.bottomPreview').innerHTML
+  blog.topContent = topPreview.innerHTML
+  blog.innerContent = bottomPreview.innerHTML.replaceAll(
+    '/p><p',
+    `/p>
+  <p`
+  )
   blog.head = blog.head.replace(
     /(?<=<title>)(.*?)(?=\s?<\/title>)/,
     blog.topContent.match(/(?<=<h1>)(.*?)(?=\s?<\/h1>)/g)
