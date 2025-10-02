@@ -72,6 +72,19 @@ function addSecheading() {
   makeOutput()
 }
 
+document.getElementById('imgAdd').addEventListener('click', addImg)
+
+function addImg() {
+  let imgContent = `
+<figure>
+    <img class="exampleImage" src="/images/placeholder.png" />
+    <figcaption>Placeholder caption</figcaption>
+</figure>`
+  blog.innerContent += imgContent
+  makePreview()
+  makeOutput()
+}
+
 // Build and display the preview + HTML output
 function makeOutput() {
   let content = blog.head + blog.topContent + blog.innerContent + blog.foot
