@@ -106,6 +106,7 @@ footer {
 
 #home {
   display: flex;
+  position: absolute;
   border-radius: 15pt;
   border-style: none;
   background-color: rgba(149, 2, 182, 0.404);
