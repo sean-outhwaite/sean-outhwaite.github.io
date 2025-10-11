@@ -33,11 +33,14 @@ function calcFrame(frame) {
   return frame.reduce((total, current) => total + current, 0)
 }
 
-document.getElementById('copy').addEventListener('click', () => {
+document.getElementById('genScore').addEventListener('click', () => {
+  let rawInput = document.getElementById('scoreArray').value
+  console.log(JSON.stringify(rawInput))
   try {
-    let input = JSON.parse(document.getElementById('scoreArray').value)
+    let input = JSON.parse(rawInput)
     document.getElementById('output').textContent = totalScoreCalc(input)
   } catch (error) {
+    console.log(error)
     document.getElementById('output').textContent =
       'Invalid input! Try entering a matrix!'
   }
@@ -67,8 +70,6 @@ function frameGenerator() {
 
   if (arr[9][0] === 10 || arr[9][0] + arr[9][1] === 10)
     arr[9].push(Math.floor(Math.random() * 11))
-
-  console.log(arr)
   return arr
 }
 frameGenerator()
@@ -78,3 +79,29 @@ function copyMatrix() {
   navigator.clipboard.writeText(output)
 }
 document.getElementById('genArray').addEventListener('click', copyMatrix)
+
+let invalid = [
+  [10, 0],
+  [6, 0],
+  [7, 1],
+  [4, 4],
+  [7, 0],
+  [8, 2],
+  [7, 1],
+  [2, 0],
+  [6, 1],
+  [6, 3],
+]
+
+let valid = [
+  [4, 3],
+  [9, 0],
+  [6, 0],
+  [0, 3],
+  [2, 0],
+  [1, 4],
+  [0, 0],
+  [5, 0],
+  [1, 4],
+  [6, 2],
+]
