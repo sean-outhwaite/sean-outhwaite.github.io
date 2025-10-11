@@ -24,8 +24,19 @@
       </div>
 
       <div class="generator flex-container-vertical">
+        <p>
+          This tool will calculate your total score for a game of bowling. Right
+          now it will require an input of an array of arrays containing the
+          scores for each round.
+        </p>
+
+        <p>
+          E.g. [[2,3],[10,0],[5,5]]. It will account for strikes and spares and
+          return your total score!
+        </p>
+        <div id="output"></div>
         <div class="genInput">Input your score array!</div>
-        <input />
+        <input id="scoreArray" />
       </div>
       <button id="copy" class="neon">Generate Score</button>
 
@@ -36,6 +47,6 @@
         ><img class="gitLogo" src="/images/github-mark.png"
       /></a>
     </footer>
-    <script type="module" src="/scripts/bloggen.js"></script>
+    <script type="module" src="/scripts/bowling.js"></script>
   </body>
 </html>
