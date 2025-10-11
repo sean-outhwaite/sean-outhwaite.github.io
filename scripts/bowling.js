@@ -42,3 +42,39 @@ document.getElementById('copy').addEventListener('click', () => {
       'Invalid input! Try entering a matrix!'
   }
 })
+
+function frameGenerator() {
+  // Fill the first roll of each frame with a random score between 0 & 10
+  let arr = Array(10)
+    .fill()
+    .map(() => [Math.floor(Math.random() * 11)])
+
+  // Set the second roll score for all frames except final
+  arr.forEach((frame, idx) => {
+    if (frame[0] === 10 && idx !== 9) {
+      frame[1] = 0
+    } else if (idx !== 9) {
+      frame[1] = Math.floor(Math.random() * (11 - frame[0]))
+    }
+  })
+
+  // Fill final frame
+  if (arr[9][0] !== 10) {
+    arr[9].push(Math.floor(Math.random() * (11 - arr[9][0])))
+  } else {
+    arr[9].push(Math.floor(Math.random() * 11))
+  }
+
+  if (arr[9][0] === 10 || arr[9][0] + arr[9][1] === 10)
+    arr[9].push(Math.floor(Math.random() * 11))
+
+  console.log(arr)
+  return arr
+}
+frameGenerator()
+
+function copyMatrix() {
+  const output = JSON.stringify(frameGenerator())
+  navigator.clipboard.writeText(output)
+}
+document.getElementById('genArray').addEventListener('click', copyMatrix)
