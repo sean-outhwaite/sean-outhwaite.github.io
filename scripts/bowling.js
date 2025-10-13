@@ -20,7 +20,7 @@ function totalScoreCalc(arr) {
           frameTotal += calcFrame(arr[idx + 1])
         }
       } else if (frameTotal === 10) {
-        frameTotal += frames[idx + 1][0]
+        frameTotal += arr[idx + 1][0]
       }
     }
     total += frameTotal
