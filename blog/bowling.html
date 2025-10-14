@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSON.parse</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦢</text></svg>"
+    />
+    <link href="../styles/main.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <a id="homeAnchor" href="../index.html"> <button id="home">Home</button></a>
+    <main class="container">
+      <div class="flex-container-nav">
+        <a id="previous"> <button id="prevBtn" class="nav">Previous</button></a>
+        <h1>JSON.parse</h1>
+        <a id="next"><button id="nextBtn" class="nav">Next</button></a>
+      </div>
+      <h2>Don't trust your console errors</h2>
+      <h3>14 Oct 2025</h3>
+      <h4>Bowling Calculator</h4>
+      <p>
+        I recently added a new project to this site; a little tool that will
+        take an array of bowling scores and calculate what the final score
+        should be. I had built and tested the logic before any of the UI existed
+        so when I added it to the site I was confident that any issues were
+        going to be from how I was handling the input data.
+      </p>
+      <h4>The Bug</h4>
+      <p>
+        I had added a button to generate a random score matrix, as well as some
+        handling for if an invalid array (or something that's not an array) was
+        entered. As I was testing it, I noticed some of my generated arrays were
+        trigger an invalid input error.
+      </p>
+      <figure>
+        <img class="exampleImage" src="/images/placeholder.png" />
+        <figcaption>Placeholder caption</figcaption>
+      </figure>
+      <h4>Troubleshooting</h4>
+      <p>
+        So I initially thought, well maybe there's a bug in the generator and
+        it's returning some malformed JSON. I compared two of its outputs and as
+        far I could tell, the structure was exactly the same.
+      </p>
+      <p>
+        I then decided to console.log the error that JSON.parse was throwing,
+        and this is what I saw: "TypeError: Cannot read properties of undefined
+        (reading '0')".
+      </p>
+      <p>
+        I looked online, and the general consensus was that you'll get this if
+        you're giving it something invalid. A misplaced comma, an invisible
+        character, etc.
+      </p>
+      <p>
+        This led me down the path of staring at arrays, trying to find any minor
+        difference. I added some extra logic to strip out possible invisible
+        characters that may be getting added, but just could not figure out why
+        some arrays worked but others didn't. I even asked Gemini that
+        helpfully(/s) informed me that it's because in the final frame of one of
+        the examples I gave it, there were 3 scores instead of 2 - this was not
+        an issue at all.
+      </p>
+      <h4>Diagnosis</h4>
+      <p>
+        I reached out to one my facilitators, because I was going insane and
+        didn't want to spend any more time trying to pinpoint the problem. They
+        were able to locate the issue and pointed out that in my calculator
+        functionality, I had actually misnamed a variable, so it was trying to
+        get a value that doesn't exist.
+      </p>
+      <p>
+        It worked fine before the UI, because I had been testing by passing it a
+        variable with that name, so the data matched up. And it only occurred on
+        the condition that the score matrix included a frame with a spare.
+      </p>
+      <p>
+        Had I spent a bit more time looking at the contents of the arrays rather
+        than the structure, I probably could have noticed this myself. But the
+        bigger lesson was: don't always trust your console errors.
+      </p>
+      <p>
+        I was so convinced this was an issue with the data itself or how I was
+        parsing it because I was checking for errors as part of the JSON.parse
+        step, that I barely even glanced at the rest of the code I had written.
+      </p>
+    </main>
+    <footer>
+      <a href="https://github.com/sean-outhwaite"
+        ><img class="gitLogo" src="/images/github-mark.png"
+      /></a>
+    </footer>
+    <script type="module" src="/scripts/script.js"></script>
+  </body>
+</html>
