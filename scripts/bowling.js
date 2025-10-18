@@ -1,8 +1,6 @@
-//simple game
 // function simpleScore(arr){
 //  return arr.map((frame)=> frame.reduce((total, current)=> total + current,0)).reduce((total, current)=> total + current,0)
 // }
-// console.log(simpleScore(frames))
 
 function totalScoreCalc(arr) {
   let total = 0
@@ -79,29 +77,3 @@ function copyMatrix() {
   navigator.clipboard.writeText(output)
 }
 document.getElementById('genArray').addEventListener('click', copyMatrix)
-
-let invalid = [
-  [10, 0],
-  [6, 0],
-  [7, 1],
-  [4, 4],
-  [7, 0],
-  [8, 2],
-  [7, 1],
-  [2, 0],
-  [6, 1],
-  [6, 3],
-]
-
-let valid = [
-  [4, 3],
-  [9, 0],
-  [6, 0],
-  [0, 3],
-  [2, 0],
-  [1, 4],
-  [0, 0],
-  [5, 0],
-  [1, 4],
-  [6, 2],
-]
