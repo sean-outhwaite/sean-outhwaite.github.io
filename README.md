@@ -6,6 +6,8 @@ A work-in-progress personal & technical blog.
 
 This project is an evolving showcase of my journey learning to code. The site itself as well as the content serve to demonstrate the things I've learned while enrolled at Dev Academy.
 
+It currently holds blog posts as well as 2 projects; a blog generator I use to write my blog posts and prepare the HTML, as well as a calculator for determining bowling scores.
+
 ## Technology
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
