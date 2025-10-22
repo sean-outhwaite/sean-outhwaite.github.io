@@ -1,5 +1,12 @@
 export const blogs = [
   {
+    title: 'The dream is over',
+    date: '22 Oct 2025',
+    blurb: 'RIP to my Github contribution streak',
+    link: 'streak',
+    img: 'contributions.png',
+  },
+  {
     title: 'JSON.parse',
     date: '15 Oct 2025',
     blurb: "Don't trust your console errors",
