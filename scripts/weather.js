@@ -28,25 +28,38 @@ const dateFormatter = function (date) {
   return formattedDate.toDateString()
 }
 
-function weatherCard() {
+weather.daily.time.forEach((day, idx) => {
+  weatherCard(idx)
+})
+
+function weatherCard(day) {
   // let link = location.appendChild(document.createElement('a'))
   let location = document.querySelector('.weather')
   let div = location.appendChild(document.createElement('div'))
 
   div.appendChild(document.createElement('h4')).textContent = dateFormatter(
-    weather.daily.time[0]
+    weather.daily.time[day]
   )
 
   div
     .appendChild(document.createElement('img'))
-    .setAttribute('src', weatherCodes[weather.daily.weather_code[0]].day.image)
+    .setAttribute(
+      'src',
+      weatherCodes[weather.daily.weather_code[day]].day.image
+    )
 
-  div.appendChild(
-    document.createElement('h5')
-  ).textContent = `Max temp: ${weather.daily.temperature_2m_max[0]}`
+  div.appendChild(document.createElement('h5')).textContent = `${
+    weatherCodes[weather.daily.weather_code[day]].day.description
+  }`
   div.appendChild(
     document.createElement('p')
-  ).textContent = `Chance of rain: ${weather.daily.precipitation_probability_max[0]}%`
+  ).textContent = `Chance of rain: ${weather.daily.precipitation_probability_max[day]}%`
+  div.appendChild(
+    document.createElement('p')
+  ).textContent = `Min temp: ${weather.daily.temperature_2m_min[day]}°C`
+  div.appendChild(
+    document.createElement('p')
+  ).textContent = `Max temp: ${weather.daily.temperature_2m_max[day]}°C`
 
   // link.setAttribute('href', `blog/${blog.link}.html`)
   // link.classList.add('blog-link')
