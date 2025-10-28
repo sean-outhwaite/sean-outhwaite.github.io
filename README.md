@@ -6,7 +6,7 @@ A work-in-progress personal & technical blog.
 
 This project is an evolving showcase of my journey learning to code. The site itself as well as the content serve to demonstrate the things I've learned while enrolled at Dev Academy.
 
-It currently holds blog posts as well as 2 projects; a blog generator I use to write my blog posts and prepare the HTML, as well as a calculator for determining bowling scores.
+It currently holds blog posts as well as 3 projects; a blog generator I use to write my blog posts and prepare the HTML, a calculator for determining bowling scores, and a 7 day weather forecast.
 
 ## Technology
 
