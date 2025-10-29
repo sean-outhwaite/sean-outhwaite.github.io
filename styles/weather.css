@@ -15,11 +15,13 @@ body {
 }
 
 main {
+  position: relative;
   background-color: rgba(245, 243, 243, 0.693);
   width: 90vw;
   border-radius: 20pt;
   padding: 1vh 2vw;
-  height: 90vh;
+  /* height: 90vh; */
+  top: 25vh;
 }
 
 h4 {
@@ -52,6 +54,8 @@ p {
 }
 
 footer {
+  position: relative;
+  top: 25vh;
   margin-top: 1vh;
   margin-bottom: 0.5vh;
   width: 20%;
@@ -109,7 +113,6 @@ footer {
 }
 
 #home {
-  display: flex;
   position: absolute;
   border-radius: 10pt;
   border-style: none;
@@ -206,7 +209,7 @@ footer {
 
 .blog-preview h4 {
   border: solid rgb(217, 191, 239);
-  padding: 10px 0px 10px 0px;
+  padding: 10px;
   border-radius: 5pt;
 }
 
