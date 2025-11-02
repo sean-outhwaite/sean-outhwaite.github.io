@@ -31,7 +31,6 @@ weather.daily.time.forEach((day, idx) => {
 })
 
 function weatherCard(day) {
-  // let link = location.appendChild(document.createElement('a'))
   let location = document.querySelector('.weather')
   let div = location.appendChild(document.createElement('div'))
   div.appendChild(document.createElement('h4')).textContent = dateFormatter(
@@ -58,7 +57,5 @@ function weatherCard(day) {
     document.createElement('p')
   ).textContent = `Max temp: ${weather.daily.temperature_2m_max[day]}°C`
 
-  // link.setAttribute('href', `blog/${blog.link}.html`)
-  // link.classList.add('blog-link')
   div.classList.add('flex-container-vertical', 'blog-preview')
 }
