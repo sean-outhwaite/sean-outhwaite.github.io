@@ -2,7 +2,7 @@ import weatherCodes from '../data/weatherCodes.js'
 
 async function getData() {
   const url =
-    'https://api.open-meteo.com/v1/forecast?latitude=-36.8485&longitude=174.7635&daily=temperature_2m_min,precipitation_probability_max,temperature_2m_max,weather_code&timezone=Pacific%2FAuckland'
+    'https://api.open-meteo.com/v1/forecast?latitude=-36.8485&longitude=174.7635&daily=temperature_2m_min,precipitation_probability_max,temperature_2m_max,weather_code,uv_index_max&timezone=Pacific%2FAuckland'
   try {
     const response = await fetch(url)
     if (!response.ok) {
@@ -56,6 +56,9 @@ function weatherCard(day) {
   div.appendChild(
     document.createElement('p')
   ).textContent = `Max temp: ${weather.daily.temperature_2m_max[day]}°C`
+  div.appendChild(
+    document.createElement('p')
+  ).textContent = `UV Index: ${weather.daily.uv_index_max[day]}`
 
   div.classList.add('flex-container-vertical', 'blog-preview')
 }
