@@ -1,10 +1,24 @@
 export const blogs = [
   {
+    title: 'Honk',
+    date: '08 Nov 2025',
+    blurb: 'Building a very serious Chrome extension',
+    link: 'honk',
+    img: 'honktml.png',
+  },
+  {
     title: 'The dream is over',
     date: '22 Oct 2025',
     blurb: 'RIP to my Github contribution streak',
     link: 'streak',
     img: 'contributions.png',
+  },
+  {
+    title: 'Weatherman',
+    date: '20 Oct 2025',
+    blurb: 'Solving an already solved problem.',
+    link: 'weather',
+    img: 'weather.png',
   },
   {
     title: 'JSON.parse',
