@@ -1,5 +1,12 @@
 export const blogs = [
   {
+    title: 'Bussin',
+    date: '08 Nov 2025',
+    blurb: 'All aboaaaaard',
+    link: 'bussin',
+    img: 'newMap.png',
+  },
+  {
     title: 'Honk',
     date: '08 Nov 2025',
     blurb: 'Building a very serious Chrome extension',

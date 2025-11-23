@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bussin</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦢</text></svg>"
+    />
+    <link href="../styles/main.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <a id="homeAnchor" href="../index.html"> <button id="home">Home</button></a>
+    <main class="container">
+      <div class="flex-container-nav">
+        <a id="previous"> <button id="prevBtn" class="nav">Previous</button></a>
+        <h1>Bussin</h1>
+        <a id="next"><button id="nextBtn" class="nav">Next</button></a>
+      </div>
+      <h2>All aboaaaaard</h2>
+      <h3>24 Nov 2025</h3>
+      <h4>Personal Projects</h4>
+      <p>
+        Recently at Dev Academy we were tasked with coming up with and
+        presenting a personal project of our own. It didn't have to be finished,
+        it could just be an idea or some designs to present.
+      </p>
+      <p>
+        We were given a few weeks to get ready for the presentation, so I used
+        that time to begin building my project. After working on APIs I had
+        begun looking into the Auckland Transport API, as it seemed to provide
+        interesting data that you could do some fun things with.
+      </p>
+      <p>
+        As I frequently travel by bus, I wanted to build something that would
+        actually be useful to me - a display of what busses will be arriving
+        soon at my regular stop and the positions of those incoming busses on a
+        map.
+      </p>
+      <h4>Roadblocks</h4>
+      <p>
+        I got access to the AT API and began playing around with it so I could
+        better understand what information was actually available and how it
+        might all fit together. What I found was a little disheartening and
+        almost caused me to drop the idea to find something easier to work on.
+      </p>
+      <p>
+        Although there was a lot of data available, the way it was structured
+        and the vagueness of the documentation made it difficult to work with
+        (at least in the beginning). I wasn't sure if I could even get a
+        accurate timetable of busses arriving soon.
+      </p>
+      <p>
+        After a bit more digging, I was able to figure out how to at least get
+        live bus locations for busses that I would be interested in so I decided
+        I would start on that first and worry about the timetable later.
+      </p>
+      <h4>Mappin</h4>
+      <p>
+        Getting the location data was relatively straightforward, I first had to
+        make a request to the stops API to get the trips for that stop and then
+        use those trip IDs to request locations from the live API. During this
+        process I also learnt about using dotenv to keep my API key private
+        (previously I've only been working with unsecured APIs).
+      </p>
+      <p>
+        The locations endpoint gives back a bunch of info on the currently
+        active trips, including lat &amp; long coordinates. So my next challenge
+        was to figure out how to actually do something with these.
+      </p>
+      <p>
+        I did a bit of research and it seemed like the most straightforward
+        solution was going to be to use the Google Maps Platform. So I signed up
+        and got to work implementing it into the app. Thankfully they provide a
+        react library, so getting a map displaying was quite easy.
+      </p>
+      <p>
+        The next step was just to map through all the lat-longs I was getting
+        from the API and generate markers on the map for their locations.
+      </p>
+      <figure>
+        <img class="exampleImage" src="/images/oldMap.png" />
+        <figcaption>V1 of the map</figcaption>
+      </figure>
+      <h4>Learning my times tables</h4>
+      <p>
+        I still wanted to add the arrival board into the app, the location data
+        was useful and you could estimate an ETA based on the distance from the
+        stop but I really wanted to be able to look at something at a glance and
+        see how much time I had until the next bus.
+      </p>
+      <p>
+        I read through the GTFS (general transit feed specification) docs which
+        the AT API is based on as well as the AT docs, and thought that the
+        tripupdates endpoint would give me what I needed - a live estimation for
+        when a trip would arrive at my stop. So I started querying it and
+        unfortunately discovered that it only contained an update for one stop
+        for each trip, meaning that if a bus was more than one stop away it
+        would not show the ETA for my stop.
+      </p>
+      <p>
+        I was hoping that AT would be doing the work for me and there would be a
+        magical way that I could just get the data that they display on the
+        boards at bus stops, but unfortunately life is never that easy.
+      </p>
+      <p>
+        In the end I had to make a request to the static schedule API, then
+        another request to tripupdates and merge the data to determine the
+        actual arrival time and display it on my board. This seemed a bit
+        daunting at first but after a bit of trial and error it all came
+        together quite nicely.
+      </p>
+      <figure>
+        <img class="exampleImage" src="/images/oldTimetable.png" />
+        <figcaption>It's alive!!</figcaption>
+      </figure>
+      <h4>Fresh coat of paint</h4>
+      <p>
+        Once I had all the info I wanted, it was time to spruce it up a bit. I
+        borrowed some of the colours from the AT website to make it look a bit
+        more official and also added some light and dark mode styling that would
+        change depending on your system setting.
+      </p>
+      <p>
+        For the map I styled the markers to use a png of an AT bus to make it a
+        bit more fun, I also added their occupancy status (empty, full etc) via
+        colour coding the bus numbers.
+      </p>
+      <figure>
+        <img class="exampleImage" src="/images/newMap.png" />
+        <figcaption>*Chefs kiss*</figcaption>
+      </figure>
+      <p>
+        In the arrival board I added some text formatting to make things a bit
+        more readable, and set the times to flash if the bus was &lt;=1 minute
+        away.
+      </p>
+      <figure>
+        <img class="exampleImage" src="/images/newTimetable.png" />
+        <figcaption>*Chefs kiss*</figcaption>
+      </figure>
+      <h4>Quality Goods</h4>
+      <p>
+        For some live QA, I've been comparing my arrival board to the one in the
+        AT app and it seems to be pretty much spot on with their ETAs. I've also
+        been trying to check bus locations in my map and keep an eye on where
+        they actually are in the real world and it seems about as accurate as
+        can be with the frequency of updates AT provides.
+      </p>
+      <p>
+        I also implemented some integration tests for the app, nocking the API
+        call for the arrival board and ensuring the test data is rendered on
+        screen. I wanted to do the same for the map, but this was a bit trickier
+        as the map itself is returned via the Google API/component so in the end
+        I just mocked the component within the test, which means it's not really
+        testing much but I hadn't done that before so at least I learnt
+        something new.
+      </p>
+      <h4>Last Stop</h4>
+      <p>
+        I had most of this finished by the time I was due to present, so was
+        able to go over the project and walk through the code with my cohort.
+      </p>
+      <figure>
+        <img class="exampleImage" src="/images/zoom.png" />
+        <figcaption>Ignore my facial expression please</figcaption>
+      </figure>
+      <p>
+        On the feature I side I don't think there's much left I want to add, but
+        I would like to make this a physical board I can keep in my house. To
+        start with I'd like to just get this deployed somewhere, and down the
+        line I want to look into setting it up on a raspberry pi with a nice
+        e-ink display.
+      </p>
+    </main>
+    <footer>
+      <a href="https://github.com/sean-outhwaite"
+        ><img class="gitLogo" src="/images/github-mark.png"
+      /></a>
+    </footer>
+    <script type="module" src="/scripts/script.js"></script>
+  </body>
+</html>
