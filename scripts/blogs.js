@@ -1,5 +1,12 @@
 export const blogs = [
   {
+    title: 'Decider',
+    date: '24 Apr 2026',
+    blurb: 'Dipping my toes in React Native.',
+    link: 'decider',
+    img: 'decider-home.png',
+  },
+  {
     title: 'Roadie',
     date: '19 Dec 2025',
     blurb: 'Your AI powered copilot.',
